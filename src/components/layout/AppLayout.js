@@ -24,7 +24,7 @@ import {
 import { useAuth } from '@/lib/auth-context';
 
 const NAV_ITEMS = [
-  { href: '/', label: 'Home', icon: FiHome },
+  { href: '/home', label: 'Home', icon: FiHome },
   { href: '/community', label: 'Community', icon: FiUsers },
   { href: '/jobs', label: 'Jobs', icon: FiBriefcase },
   { href: '/marketplace', label: 'Marketplace', icon: FiShoppingBag },
@@ -37,7 +37,7 @@ const NAV_ITEMS = [
 ];
 
 const MOBILE_NAV = [
-  { href: '/', label: 'Home', icon: FiHome },
+  { href: '/home', label: 'Home', icon: FiHome },
   { href: '/community', label: 'Community', icon: FiUsers },
   { href: '/marketplace', label: 'Market', icon: FiShoppingBag },
   { href: '/dating', label: 'Dating', icon: FiHeart },
@@ -62,7 +62,7 @@ export default function AppLayout({ children }) {
             >
               {sidebarOpen ? <FiX size={22} /> : <FiMenu size={22} />}
             </button>
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/home" className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary font-bold text-white">
                 H
               </div>
@@ -116,7 +116,7 @@ export default function AppLayout({ children }) {
       >
         <nav className="flex flex-col gap-1 p-3">
           {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+            const isActive = pathname === item.href || (item.href !== '/home' && pathname.startsWith(item.href));
             return (
               <Link
                 key={item.href}
@@ -166,7 +166,7 @@ export default function AppLayout({ children }) {
       <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white dark:border-dark-700 dark:bg-dark-900 lg:hidden">
         <div className="flex items-center justify-around py-2">
           {MOBILE_NAV.map((item) => {
-            const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+            const isActive = pathname === item.href || (item.href !== '/home' && pathname.startsWith(item.href));
             return (
               <Link
                 key={item.href}
