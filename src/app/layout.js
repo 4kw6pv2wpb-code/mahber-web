@@ -8,6 +8,8 @@ export const metadata = {
   title: 'HabeshaHub — The Diaspora Super App',
   description:
     'The all-in-one platform for Ethiopian, Eritrean, and Somali diaspora communities. Jobs, housing, events, marketplace, dating, immigration resources, remittance, and more — all in one place.',
+    keywords: ['habesha', 'ethiopian diaspora', 'eritrean diaspora', 'somali diaspora', 'habesha app', 'ethiopian jobs', 'habesha dating', 'remittance ethiopia', 'habesha community', 'horn of africa diaspora'],
+  robots: { index: true, follow: true },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
