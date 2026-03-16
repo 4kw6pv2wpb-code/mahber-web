@@ -11,7 +11,7 @@ import { useAnalytics } from '@/lib/useAnalytics';
 export default function LoginPage() {
   useAnalytics();
   const router = useRouter();
-  const { login } = useAuth();
+  const { updateUser } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -28,19 +28,18 @@ export default function LoginPage() {
         body: JSON.stringify({ action: 'login', email, password }),
       });
       const data = await res.json();
-      if (data.error) {
-        setError(data.error);
+      if (!res.ok || data.error) {
+        setError(typeof data.error === 'string' ? data.error : 'Invalid email or password.');
       } else {
-        // Store token and user in localStorage via api helpers and auth context
+        // Store token and user in localStorage via api helpers
         if (data.token) setToken(data.token);
         if (data.refreshToken) setRefreshToken(data.refreshToken);
         if (data.user) {
           localStorage.setItem('habeshahub_user', JSON.stringify(data.user));
+          // Update auth context so the app knows the user is logged in
+          updateUser(data.user);
         }
-        // Update auth context by calling login which will set the state
-        // We already stored the token, so just redirect
         router.push('/home');
-        router.refresh();
       }
     } catch {
       setError('Something went wrong. Please try again.');

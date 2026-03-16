@@ -49,12 +49,14 @@ export default function MarketplacePage() {
       setLoading(true);
       try {
         const res = await marketplaceApi.getItems();
-        const data = res.data?.data || res.data || [];
+        const raw = res.data?.data ?? res.data?.items ?? res.data;
+        const data = Array.isArray(raw) ? raw : [];
         if (data.length > 0) {
           setItems(data);
         }
       } catch (err) {
         console.error('Failed to fetch marketplace, using mock data:', err);
+        // Keep MOCK_ITEMS that were set as initial state
       } finally {
         setLoading(false);
       }

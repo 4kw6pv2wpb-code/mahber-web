@@ -22,10 +22,14 @@ export async function POST(request) {
 
       const data = await backendRes.json();
 
-      if (!backendRes.ok) {
+      if (!backendRes.ok || data.success === false) {
+        const errMsg =
+          (typeof data.error === 'string' ? data.error : data.error?.message) ||
+          data.message ||
+          'Invalid email or password';
         return NextResponse.json(
-          { error: data.error || data.message || 'Invalid email or password' },
-          { status: backendRes.status },
+          { error: errMsg },
+          { status: backendRes.ok ? 400 : backendRes.status },
         );
       }
 
@@ -63,10 +67,14 @@ export async function POST(request) {
 
       const data = await backendRes.json();
 
-      if (!backendRes.ok) {
+      if (!backendRes.ok || data.success === false) {
+        const errMsg =
+          (typeof data.error === 'string' ? data.error : data.error?.message) ||
+          data.message ||
+          'Registration failed';
         return NextResponse.json(
-          { error: data.error || data.message || 'Registration failed' },
-          { status: backendRes.status },
+          { error: errMsg },
+          { status: backendRes.ok ? 400 : backendRes.status },
         );
       }
 

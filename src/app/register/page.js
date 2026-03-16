@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { FiUser, FiMail, FiLock, FiMapPin, FiArrowRight } from 'react-icons/fi';
 import { setToken, setRefreshToken } from '@/lib/api';
+import { useAuth } from '@/lib/auth-context';
 import { useAnalytics } from '@/lib/useAnalytics';
 
 const LANGUAGES = ['English', 'Amharic', 'Tigrinya', 'Somali', 'Oromo'];
@@ -12,6 +13,7 @@ const LANGUAGES = ['English', 'Amharic', 'Tigrinya', 'Somali', 'Oromo'];
 export default function RegisterPage() {
   useAnalytics();
   const router = useRouter();
+  const { updateUser } = useAuth();
   const [form, setForm] = useState({ name: '', email: '', password: '', city: '', languages: ['English'] });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -40,17 +42,18 @@ export default function RegisterPage() {
         body: JSON.stringify({ action: 'register', ...form }),
       });
       const data = await res.json();
-      if (data.error) {
-        setError(data.error);
+      if (!res.ok || data.error) {
+        setError(typeof data.error === 'string' ? data.error : 'Registration failed. Please try again.');
       } else {
         // Store token and user in localStorage
         if (data.token) setToken(data.token);
         if (data.refreshToken) setRefreshToken(data.refreshToken);
         if (data.user) {
           localStorage.setItem('habeshahub_user', JSON.stringify(data.user));
+          // Update auth context so the app knows the user is logged in
+          updateUser(data.user);
         }
         router.push('/home');
-        router.refresh();
       }
     } catch {
       setError('Something went wrong. Please try again.');

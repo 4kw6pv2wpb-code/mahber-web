@@ -41,17 +41,15 @@ export default function HousingPage() {
     async function fetchListings() {
       setLoading(true);
       try {
-        const params = {};
-        if (city !== 'All Cities') params.city = city;
-        if (type !== 'All Types') params.type = type;
-        if (search) params.search = search;
-        const res = await housingApi.getListings(params);
-        const data = res.data?.data || res.data || [];
+        const res = await housingApi.getListings();
+        const raw = res.data?.data ?? res.data?.listings ?? res.data;
+        const data = Array.isArray(raw) ? raw : [];
         if (data.length > 0) {
           setListings(data);
         }
       } catch (err) {
         console.error('Failed to fetch housing, using mock data:', err);
+        // Keep MOCK_LISTINGS that were set as initial state
       } finally {
         setLoading(false);
       }
