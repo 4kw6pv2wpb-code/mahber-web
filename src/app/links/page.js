@@ -18,20 +18,8 @@ import {
   FiMail,
   FiExternalLink,
 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
-const WAITLIST_KEY = 'habeshahub_waitlist';
-
-function getWaitlist() {
-  if (typeof window === 'undefined') return [];
-  try { return JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]'); } catch { return []; }
-}
-function addToWaitlist(email) {
-  const list = getWaitlist();
-  if (list.some((e) => e.email === email)) return false;
-  list.push({ email, ts: new Date().toISOString() });
-  localStorage.setItem(WAITLIST_KEY, JSON.stringify(list));
-  return true;
-}
 
 const LINKS = [
   { icon: FiBriefcase, label: 'Jobs Board', desc: 'Find Habesha community opportunities', href: '/jobs', color: 'from-primary to-amber-600' },
@@ -53,18 +41,27 @@ const SOCIALS = [
 ];
 
 export default function LinksPage() {
+  useAnalytics();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle');
   const [count, setCount] = useState(0);
 
-  useEffect(() => { setCount(getWaitlist().length); }, []);
+  useEffect(() => { fetch('/api/waitlist').then(r=>r.json()).then(d=>setCount(d.count||0)).catch(()=>{}); }, []);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (!email.trim()) return;
-    const added = addToWaitlist(email.trim());
-    setStatus(added ? 'success' : 'duplicate');
-    if (added) { setEmail(''); setCount((c) => c + 1); }
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim(), source: 'links' }),
+      });
+      const data = await res.json();
+      const added = data.message !== 'Already on the waitlist!' && !data.error;
+      setStatus(added ? 'success' : 'duplicate');
+      if (added) { setEmail(''); setCount(data.count || count + 1); }
+    } catch { setStatus('duplicate'); }
     setTimeout(() => setStatus('idle'), 4000);
   };
 

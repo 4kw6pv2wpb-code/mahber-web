@@ -7,8 +7,10 @@ import { FiMail, FiLock, FiEye, FiEyeOff } from 'react-icons/fi';
 import { useAuth } from '@/lib/auth-context';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 export default function LoginPage() {
+  useAnalytics();
   const router = useRouter();
   const { login } = useAuth();
   const [form, setForm] = useState({ email: '', password: '' });

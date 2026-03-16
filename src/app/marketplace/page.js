@@ -5,6 +5,7 @@ import AppLayout from '@/components/layout/AppLayout';
 import { ProductCard } from '@/components/marketplace/ProductCard';
 import { FiPlus, FiSearch, FiLoader } from 'react-icons/fi';
 import api from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const CATEGORIES = ['All', 'Fashion', 'Food', 'Electronics', 'Services', 'Vehicles', 'Other'];
 
@@ -129,6 +130,7 @@ const DEMO_PRODUCTS = [
 ];
 
 export default function MarketplacePage() {
+  useAnalytics();
   const [category, setCategory] = useState('All');
   const [search, setSearch] = useState('');
   const [products, setProducts] = useState([]);

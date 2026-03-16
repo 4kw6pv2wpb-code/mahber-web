@@ -9,8 +9,10 @@ import { Avatar } from '@/components/ui/Avatar';
 import { FiCalendar, FiTrendingUp, FiLoader } from 'react-icons/fi';
 import { useAuth } from '@/lib/auth-context';
 import { feedApi, eventsApi } from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 export default function HomePage() {
+  useAnalytics();
   const { user } = useAuth();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [posts, setPosts] = useState([]);

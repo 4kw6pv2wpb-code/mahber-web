@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { Avatar } from '@/components/ui/Avatar';
 import { Badge } from '@/components/ui/Badge';
 import { FiArrowLeft, FiMapPin, FiClock, FiUsers, FiShare2, FiCalendar } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK = {
   title: 'Seattle Habesha Night', time: 'Saturday, March 15, 2026 · 8:00 PM – 2:00 AM', venue: 'The Showbox', address: '1426 1st Ave, Seattle, WA 98101', attendees: 234, price: '$25',
@@ -16,6 +17,7 @@ const MOCK = {
 };
 
 export default function EventDetailPage() {
+  useAnalytics();
   const { id } = useParams();
   return (
     <AppLayout>

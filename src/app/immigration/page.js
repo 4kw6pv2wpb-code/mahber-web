@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Avatar } from '@/components/ui/Avatar';
 import { FiSend, FiFileText, FiShield, FiUsers, FiGlobe, FiBook, FiStar, FiMapPin } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const EXAMPLE_QS = ['How to apply for asylum?', 'Green card timeline', 'Work permit process', 'Family sponsorship', 'DACA updates', 'Citizenship requirements'];
 
@@ -30,6 +31,7 @@ const INITIAL_MESSAGES = [
 ];
 
 export default function ImmigrationPage() {
+  useAnalytics();
   const [messages, setMessages] = useState(INITIAL_MESSAGES);
   const [input, setInput] = useState('');
 

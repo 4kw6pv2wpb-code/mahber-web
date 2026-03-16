@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { PostCard } from '@/components/feed/PostCard';
 import { FiMapPin, FiCalendar, FiMessageSquare } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK = {
   name: 'Selam Tekle', bio: 'Community organizer & coffee enthusiast ☕ | Addis Ababa → Seattle', location: 'Seattle, WA', heritage: 'Ethiopian',
@@ -18,6 +19,7 @@ const POSTS = [
 ];
 
 export default function UserProfilePage() {
+  useAnalytics();
   const { id } = useParams();
   return (
     <AppLayout>

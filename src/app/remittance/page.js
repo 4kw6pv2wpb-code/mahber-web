@@ -21,6 +21,7 @@ import {
   FiTrendingUp,
   FiShield,
 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const SEND_COUNTRIES = [
   { code: 'US', name: 'United States', currency: 'USD', symbol: '$', flag: '🇺🇸' },
@@ -115,6 +116,7 @@ function StatusBadge({ status }) {
 }
 
 export default function RemittancePage() {
+  useAnalytics();
   const [sendFrom, setSendFrom] = useState(SEND_COUNTRIES[0]);
   const [receiveTo, setReceiveTo] = useState(RECEIVE_COUNTRIES[0]);
   const [amount, setAmount] = useState('500');

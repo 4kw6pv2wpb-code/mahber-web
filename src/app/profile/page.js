@@ -9,10 +9,12 @@ import { Badge } from '@/components/ui/Badge';
 import { FiMapPin, FiCalendar, FiEdit2, FiBriefcase, FiGlobe, FiLoader } from 'react-icons/fi';
 import { useAuth } from '@/lib/auth-context';
 import { communityApi, feedApi } from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const TABS = ['Posts', 'About', 'Photos', 'Connections'];
 
 export default function ProfilePage() {
+  useAnalytics();
   const { user } = useAuth();
   const [tab, setTab] = useState('Posts');
   const [profile, setProfile] = useState(null);

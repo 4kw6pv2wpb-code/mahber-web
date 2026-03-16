@@ -6,6 +6,7 @@ import { ProfileCard } from '@/components/dating/ProfileCard';
 import { MatchesList } from '@/components/dating/MatchesList';
 import { FiHeart, FiX, FiStar, FiUser, FiSettings, FiLoader } from 'react-icons/fi';
 import { datingApi } from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const TABS = ['Discover', 'Matches'];
 
@@ -73,6 +74,7 @@ const DEMO_PROFILES = [
 ];
 
 export default function DatingPage() {
+  useAnalytics();
   const [tab, setTab] = useState('Discover');
   const [profiles, setProfiles] = useState([]);
   const [matches, setMatches] = useState([]);

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import AppLayout from '@/components/layout/AppLayout';
 import { FiArrowLeft, FiHeart, FiUser, FiMessageCircle, FiSearch } from 'react-icons/fi';
 import { formatDistanceToNow } from 'date-fns';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK_MATCHES = [
   {
@@ -75,6 +76,7 @@ const HERITAGE_STYLES = {
 };
 
 export default function MatchesPage() {
+  useAnalytics();
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredMatches = MOCK_MATCHES.filter((match) => {

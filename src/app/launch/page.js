@@ -20,24 +20,12 @@ import {
   FiGlobe,
   FiMessageCircle,
 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 /* ------------------------------------------------------------------ */
 /* Waitlist helpers (shared with landing)                               */
 /* ------------------------------------------------------------------ */
 
-const WAITLIST_KEY = 'habeshahub_waitlist';
-
-function getWaitlist() {
-  if (typeof window === 'undefined') return [];
-  try { return JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]'); } catch { return []; }
-}
-function addToWaitlist(email) {
-  const list = getWaitlist();
-  if (list.some((e) => e.email === email)) return false;
-  list.push({ email, ts: new Date().toISOString() });
-  localStorage.setItem(WAITLIST_KEY, JSON.stringify(list));
-  return true;
-}
 
 /* ------------------------------------------------------------------ */
 /* Countdown                                                           */
@@ -100,16 +88,25 @@ const LAUNCH_FEATURES = [
 /* ------------------------------------------------------------------ */
 
 export default function LaunchPage() {
+  useAnalytics();
   const countdown = useCountdown(LAUNCH_DATE);
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle');
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (!email.trim()) return;
-    const added = addToWaitlist(email.trim());
-    setStatus(added ? 'success' : 'duplicate');
-    if (added) setEmail('');
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim(), source: 'launch' }),
+      });
+      const data = await res.json();
+      const added = data.message !== 'Already on the waitlist!' && !data.error;
+      setStatus(added ? 'success' : 'duplicate');
+      if (added) setEmail('');
+    } catch { setStatus('duplicate'); }
     setTimeout(() => setStatus('idle'), 4000);
   };
 

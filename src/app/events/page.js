@@ -6,10 +6,12 @@ import { EventCard } from '@/components/events/EventCard';
 import { Button } from '@/components/ui/Button';
 import { FiPlus, FiSearch, FiLoader } from 'react-icons/fi';
 import { eventsApi } from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const TABS = ['Upcoming', 'This Week', 'This Month', 'Past'];
 
 export default function EventsPage() {
+  useAnalytics();
   const [tab, setTab] = useState('Upcoming');
   const [search, setSearch] = useState('');
   const [events, setEvents] = useState([]);

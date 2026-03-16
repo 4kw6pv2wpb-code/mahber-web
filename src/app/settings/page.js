@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card } from '@/components/ui/Card';
 import { FiUser, FiShield, FiBell, FiSun, FiGlobe } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const SECTIONS = [
   { id: 'account', label: 'Account', icon: FiUser },
@@ -28,6 +29,7 @@ function Toggle({ label, defaultChecked = false }) {
 }
 
 export default function SettingsPage() {
+  useAnalytics();
   const [section, setSection] = useState('account');
   const [theme, setTheme] = useState('system');
   const [accentColor, setAccentColor] = useState('#D4A017');

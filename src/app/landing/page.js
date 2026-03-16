@@ -21,6 +21,7 @@ import {
   FiInstagram,
   FiChevronRight,
 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 /* ------------------------------------------------------------------ */
 /* Data                                                                */
@@ -57,18 +58,24 @@ const TESTIMONIALS = [
 /* Waitlist helpers                                                     */
 /* ------------------------------------------------------------------ */
 
-const WAITLIST_KEY = 'habeshahub_waitlist';
-
-function getWaitlist() {
-  if (typeof window === 'undefined') return [];
-  try { return JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]'); } catch { return []; }
+async function addToWaitlistAPI(email) {
+  try {
+    const res = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source: 'landing' }),
+    });
+    const data = await res.json();
+    return { added: !data.error && data.message !== 'Already on the waitlist!', count: data.count || 0 };
+  } catch { return { added: false, count: 0 }; }
 }
-function addToWaitlist(email) {
-  const list = getWaitlist();
-  if (list.some((e) => e.email === email)) return false;
-  list.push({ email, ts: new Date().toISOString() });
-  localStorage.setItem(WAITLIST_KEY, JSON.stringify(list));
-  return true;
+
+async function getWaitlistCount() {
+  try {
+    const res = await fetch('/api/waitlist');
+    const data = await res.json();
+    return data.count || 0;
+  } catch { return 0; }
 }
 
 /* ------------------------------------------------------------------ */
@@ -79,10 +86,10 @@ function WaitlistForm({ size = 'lg' }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | success | duplicate
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (!email.trim()) return;
-    const added = addToWaitlist(email.trim());
+    const { added, count } = await addToWaitlistAPI(email.trim());
     setStatus(added ? 'success' : 'duplicate');
     if (added) setEmail('');
     setTimeout(() => setStatus('idle'), 4000);
@@ -141,10 +148,11 @@ function FeatureCard({ feature }) {
 /* ------------------------------------------------------------------ */
 
 export default function LandingPage() {
+  useAnalytics();
   const [waitlistCount, setWaitlistCount] = useState(0);
 
   useEffect(() => {
-    setWaitlistCount(getWaitlist().length);
+    getWaitlistCount().then(setWaitlistCount);
   }, []);
 
   return (

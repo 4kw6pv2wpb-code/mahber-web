@@ -7,10 +7,12 @@ import { FiSearch, FiPlus, FiLoader } from 'react-icons/fi';
 import { Button } from '@/components/ui/Button';
 import { jobsApi } from '@/lib/api';
 import { useAuth } from '@/lib/auth-context';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const FILTERS = ['All', 'Full-time', 'Part-time', 'Remote', 'Contract'];
 
 export default function JobsPage() {
+  useAnalytics();
   const { user } = useAuth();
   const [filter, setFilter] = useState('All');
   const [search, setSearch] = useState('');

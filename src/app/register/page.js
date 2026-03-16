@@ -7,10 +7,12 @@ import { FiUser, FiMail, FiLock, FiMapPin, FiGlobe } from 'react-icons/fi';
 import { useAuth } from '@/lib/auth-context';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const COUNTRIES = ['Ethiopia', 'Eritrea', 'Somalia', 'Djibouti', 'United States', 'Canada', 'United Kingdom', 'Germany', 'Sweden', 'Other'];
 
 export default function RegisterPage() {
+  useAnalytics();
   const router = useRouter();
   const { register } = useAuth();
   const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '', country: '', city: '' });

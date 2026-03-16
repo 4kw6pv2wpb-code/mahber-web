@@ -17,6 +17,7 @@ import {
   FiFlag,
   FiHeart,
 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK_PRODUCT_MAP = {
   '1': {
@@ -110,6 +111,7 @@ const DEFAULT_PRODUCT = {
 };
 
 export default function ProductDetailPage() {
+  useAnalytics();
   const params = useParams();
   const product = MOCK_PRODUCT_MAP[params.id] || DEFAULT_PRODUCT;
   const [saved, setSaved] = useState(false);

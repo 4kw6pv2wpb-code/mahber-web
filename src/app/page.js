@@ -4,8 +4,10 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import LandingPage from './landing/page';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 export default function RootPage() {
+  useAnalytics();
   const { user, isLoading } = useAuth();
   const router = useRouter();
 

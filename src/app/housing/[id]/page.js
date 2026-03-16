@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { Avatar } from '@/components/ui/Avatar';
 import { Badge } from '@/components/ui/Badge';
 import { FiArrowLeft, FiMapPin, FiMessageSquare, FiHeart, FiShare2, FiCheck } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK = {
   title: '2BR Near Little Ethiopia', type: 'Apartment', price: 1800, location: 'Fairfax Ave, Los Angeles, CA', beds: 2, baths: 1, sqft: 850,
@@ -17,6 +18,7 @@ const MOCK = {
 };
 
 export default function HousingDetailPage() {
+  useAnalytics();
   const { id } = useParams();
   return (
     <AppLayout>

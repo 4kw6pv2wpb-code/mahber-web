@@ -6,10 +6,12 @@ import { ListingCard } from '@/components/housing/ListingCard';
 import { FiSearch, FiPlus, FiLoader } from 'react-icons/fi';
 import { Button } from '@/components/ui/Button';
 import { housingApi } from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const TABS = ['All', 'Apartments', 'Rooms', 'Houses', 'Sublets'];
 
 export default function HousingPage() {
+  useAnalytics();
   const [tab, setTab] = useState('All');
   const [search, setSearch] = useState('');
   const [listings, setListings] = useState([]);

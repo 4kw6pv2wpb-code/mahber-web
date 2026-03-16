@@ -17,6 +17,7 @@ import {
   FiChevronDown,
   FiPlus,
 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK_VIDEOS = [
   {
@@ -260,6 +261,7 @@ function VideoCard({ video, isActive, isMuted, onToggleMute }) {
 }
 
 export default function VideosPage() {
+  useAnalytics();
   const [activeIndex, setActiveIndex] = useState(0);
   const [muted, setMuted] = useState(true);
   const scrollRef = useRef(null);

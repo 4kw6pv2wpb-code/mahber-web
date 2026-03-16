@@ -6,6 +6,7 @@ import AppLayout from '@/components/layout/AppLayout';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { FiArrowLeft, FiMapPin, FiDollarSign, FiClock, FiBriefcase, FiBookmark, FiShare2 } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const MOCK_JOB = {
   id: '1', title: 'Software Engineer', company: 'Habesha Tech Solutions', location: 'Seattle, WA', salary: '$120k–$160k', type: 'Full-time', posted: '2 days ago', logoBg: 'bg-primary',
@@ -16,6 +17,7 @@ const MOCK_JOB = {
 };
 
 export default function JobDetailPage() {
+  useAnalytics();
   const { id } = useParams();
   const job = MOCK_JOB;
 

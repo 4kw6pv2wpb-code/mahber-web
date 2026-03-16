@@ -5,10 +5,12 @@ import AppLayout from '@/components/layout/AppLayout';
 import { DiscussionCard } from '@/components/community/DiscussionCard';
 import { FiPlus, FiTrendingUp, FiHash, FiLoader } from 'react-icons/fi';
 import { feedApi } from '@/lib/api';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const TABS = ['All Posts', 'Questions', 'Discussions', 'Announcements'];
 
 export default function CommunityPage() {
+  useAnalytics();
   const [tab, setTab] = useState('All Posts');
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -6,8 +6,10 @@ import { Avatar } from '@/components/ui/Avatar';
 import { FiSearch, FiSend, FiSmile, FiPaperclip, FiArrowLeft, FiMoreVertical, FiLoader } from 'react-icons/fi';
 import { messagingApi } from '@/lib/api';
 import { useAuth } from '@/lib/auth-context';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 export default function MessagesPage() {
+  useAnalytics();
   const { user } = useAuth();
   const [activeConvo, setActiveConvo] = useState(null);
   const [newMsg, setNewMsg] = useState('');

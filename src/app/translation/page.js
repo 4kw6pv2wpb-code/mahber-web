@@ -5,6 +5,7 @@ import AppLayout from '@/components/layout/AppLayout';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { FiArrowRight, FiRepeat, FiClock } from 'react-icons/fi';
+import { useAnalytics } from '@/lib/useAnalytics';
 
 const LANGUAGES = [
   { code: 'en', name: 'English', native: 'English' },
@@ -22,6 +23,7 @@ const MOCK_HISTORY = [
 ];
 
 export default function TranslationPage() {
+  useAnalytics();
   const [fromLang, setFromLang] = useState('en');
   const [toLang, setToLang] = useState('am');
   const [sourceText, setSourceText] = useState('Welcome to HabeshaHub');
