@@ -1,102 +1,13 @@
 import { NextResponse } from 'next/server';
 
 const BACKEND_URL =
-  process.env.BACKEND_URL ||
+  process.env.NEXT_PUBLIC_API_URL ||
   'https://habeshahub-backend-production.up.railway.app/api';
 
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { action, email, password, name, city, languages } = body;
-
-    if (action === 'login') {
-      if (!email || !password) {
-        return NextResponse.json({ error: 'Email and password required' }, { status: 400 });
-      }
-
-      const backendRes = await fetch(`${BACKEND_URL}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await backendRes.json();
-
-      if (!backendRes.ok || data.success === false) {
-        const errMsg =
-          (typeof data.error === 'string' ? data.error : data.error?.message) ||
-          data.message ||
-          'Invalid email or password';
-        return NextResponse.json(
-          { error: errMsg },
-          { status: backendRes.ok ? 400 : backendRes.status },
-        );
-      }
-
-      const response = NextResponse.json({
-        user: data.user || data.data?.user,
-        token: data.token || data.data?.token,
-        refreshToken: data.refreshToken || data.data?.refreshToken,
-      });
-
-      // Also set an httpOnly cookie for SSR auth if the backend returns a token
-      const token = data.token || data.data?.token;
-      if (token) {
-        response.cookies.set('hh_token', token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 30,
-          path: '/',
-        });
-      }
-
-      return response;
-    }
-
-    if (action === 'register') {
-      if (!name || !email || !password) {
-        return NextResponse.json({ error: 'Name, email, and password required' }, { status: 400 });
-      }
-
-      const backendRes = await fetch(`${BACKEND_URL}/auth/register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password, city, languages }),
-      });
-
-      const data = await backendRes.json();
-
-      if (!backendRes.ok || data.success === false) {
-        const errMsg =
-          (typeof data.error === 'string' ? data.error : data.error?.message) ||
-          data.message ||
-          'Registration failed';
-        return NextResponse.json(
-          { error: errMsg },
-          { status: backendRes.ok ? 400 : backendRes.status },
-        );
-      }
-
-      const response = NextResponse.json({
-        user: data.user || data.data?.user,
-        token: data.token || data.data?.token,
-        refreshToken: data.refreshToken || data.data?.refreshToken,
-      });
-
-      const token = data.token || data.data?.token;
-      if (token) {
-        response.cookies.set('hh_token', token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'lax',
-          maxAge: 60 * 60 * 24 * 30,
-          path: '/',
-        });
-      }
-
-      return response;
-    }
+    const { action, ...userData } = body;
 
     if (action === 'logout') {
       const response = NextResponse.json({ ok: true });
@@ -104,9 +15,44 @@ export async function POST(request) {
       return response;
     }
 
-    return NextResponse.json({ error: 'Invalid action' }, { status: 400 });
-  } catch (e) {
-    console.error('Auth route error:', e);
+    const endpoint = action === 'register' ? '/auth/register' : '/auth/login';
+
+    const res = await fetch(`${BACKEND_URL}${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(userData),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || data.success === false) {
+      const errorMsg =
+        (typeof data.error === 'string' ? data.error : data.error?.message) ||
+        data.message ||
+        'Something went wrong';
+      return NextResponse.json({ error: errorMsg }, { status: res.status });
+    }
+
+    const token = data.token || data.data?.token;
+    const response = NextResponse.json({
+      token,
+      user: data.user || data.data?.user,
+      refreshToken: data.refreshToken || data.data?.refreshToken,
+    });
+
+    if (token) {
+      response.cookies.set('hh_token', token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 30,
+        path: '/',
+      });
+    }
+
+    return response;
+  } catch (error) {
+    console.error('Auth proxy error:', error);
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }
@@ -118,7 +64,6 @@ export async function GET(request) {
       return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
     }
 
-    // Try to get user profile from the backend
     const backendRes = await fetch(`${BACKEND_URL}/users/me`, {
       headers: { Authorization: `Bearer ${token}` },
     });
