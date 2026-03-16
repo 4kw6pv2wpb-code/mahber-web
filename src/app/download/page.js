@@ -1,6 +1,7 @@
 'use client';
 
 import { useAnalytics } from '@/lib/useAnalytics';
+import Footer from '@/components/Footer';
 
 export default function DownloadPage() {
   useAnalytics();
@@ -130,6 +131,7 @@ export default function DownloadPage() {
           </a>
         </p>
       </div>
+          <Footer />
     </div>
   );
 }

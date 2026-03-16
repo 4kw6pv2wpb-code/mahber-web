@@ -9,6 +9,7 @@ export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [waitlist, setWaitlist] = useState({ count: 0, entries: [] });
   const [analytics, setAnalytics] = useState({ totalViews: 0, topPages: [], dailyViews: [], recentEntries: [] });
+  const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [tab, setTab] = useState('waitlist');
 
@@ -25,12 +26,15 @@ export default function AdminPage() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [wRes, aRes] = await Promise.all([
+      const [wRes, aRes, cRes] = await Promise.all([
         fetch(`/api/waitlist?password=${PASS}`),
         fetch(`/api/analytics?password=${PASS}`),
+        fetch(`/api/contact?password=${PASS}`),
       ]);
       setWaitlist(await wRes.json());
       setAnalytics(await aRes.json());
+      const cData = await cRes.json();
+      setContacts(cData.contacts || []);
     } catch (e) {
       console.error('Failed to fetch admin data', e);
     }
@@ -140,7 +144,7 @@ export default function AdminPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           <StatCard label="Waitlist Signups" value={waitlist.count || 0} color="amber" />
           <StatCard label="Total Page Views" value={analytics.totalViews || 0} color="blue" />
-          <StatCard label="Unique Pages" value={analytics.topPages?.length || 0} color="green" />
+          <StatCard label="Contacts" value={contacts.length} color="green" />
           <StatCard
             label="Today's Views"
             value={
@@ -152,7 +156,7 @@ export default function AdminPage() {
 
         {/* Tabs */}
         <div className="flex gap-2 mb-6">
-          {['waitlist', 'analytics', 'traffic'].map((t) => (
+          {['waitlist', 'analytics', 'traffic', 'contacts'].map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -301,6 +305,41 @@ export default function AdminPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        )}
+
+
+        {/* Contacts Tab */}
+        {tab === 'contacts' && (
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+            <h3 className="text-lg font-bold mb-4">Contact Submissions ({contacts.length})</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-gray-800 text-left text-gray-400">
+                    <th className="pb-3 pr-4">Name</th>
+                    <th className="pb-3 pr-4">Email</th>
+                    <th className="pb-3 pr-4">Message</th>
+                    <th className="pb-3 pr-4">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {contacts.slice().reverse().map((c, i) => (
+                    <tr key={i} className="border-b border-gray-800/50 hover:bg-gray-800/30">
+                      <td className="py-2 pr-4 font-medium">{c.name}</td>
+                      <td className="py-2 pr-4 text-amber-400 font-mono text-xs">{c.email}</td>
+                      <td className="py-2 pr-4 text-gray-400 max-w-[300px] truncate">{c.message}</td>
+                      <td className="py-2 pr-4 text-gray-500 whitespace-nowrap">
+                        {new Date(c.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                      </td>
+                    </tr>
+                  ))}
+                  {contacts.length === 0 && (
+                    <tr><td colSpan={4} className="py-8 text-center text-gray-500">No contact submissions yet.</td></tr>
+                  )}
+                </tbody>
+              </table>
             </div>
           </div>
         )}

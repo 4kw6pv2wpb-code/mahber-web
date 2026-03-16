@@ -1,219 +1,140 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
+import { FiSearch, FiMapPin, FiGrid, FiPlus } from 'react-icons/fi';
 import AppLayout from '@/components/layout/AppLayout';
-import { ProductCard } from '@/components/marketplace/ProductCard';
-import { FiPlus, FiSearch, FiLoader } from 'react-icons/fi';
-import api from '@/lib/api';
 import { useAnalytics } from '@/lib/useAnalytics';
 
-const CATEGORIES = ['All', 'Fashion', 'Food', 'Electronics', 'Services', 'Vehicles', 'Other'];
+const CATEGORIES = ['All', 'Traditional', 'Food & Spice', 'Art & Decor', 'Jewelry', 'Clothing', 'Books', 'Electronics', 'Services'];
 
-const DEMO_PRODUCTS = [
-  {
-    id: 'demo-1',
-    title: 'Handwoven Habesha Kemis',
-    description: 'Beautiful traditional Ethiopian dress, handwoven with intricate tilf patterns. Perfect for holidays and celebrations.',
-    price: 250,
-    currency: 'USD',
-    category: 'Fashion',
-    imageUrl: 'https://images.unsplash.com/photo-1590735213920-68192a487bc2?w=400',
-    seller: { name: 'Tigist Designs', rating: 4.9 },
-    location: 'Washington, DC',
-    condition: 'New',
-    createdAt: '2026-03-14T10:00:00Z',
-  },
-  {
-    id: 'demo-2',
-    title: 'Fresh Teff Flour — 5kg Bag',
-    description: 'Premium brown teff flour imported directly from Ethiopia. Perfect for making injera at home.',
-    price: 35,
-    currency: 'USD',
-    category: 'Food',
-    imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400',
-    seller: { name: 'Habesha Foods Market', rating: 4.8 },
-    location: 'Seattle, WA',
-    condition: 'New',
-    createdAt: '2026-03-13T15:00:00Z',
-  },
-  {
-    id: 'demo-3',
-    title: 'Jebena Coffee Set — Handmade Clay',
-    description: 'Traditional Ethiopian coffee ceremony set. Includes jebena pot, rekebot tray, and 6 cini cups.',
-    price: 85,
-    currency: 'USD',
-    category: 'Other',
-    imageUrl: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400',
-    seller: { name: 'Abeba Crafts', rating: 5.0 },
-    location: 'Atlanta, GA',
-    condition: 'New',
-    createdAt: '2026-03-12T09:00:00Z',
-  },
-  {
-    id: 'demo-4',
-    title: 'Eritrean Gold Jewelry Set',
-    description: 'Elegant 18k gold-plated necklace and earring set with traditional Eritrean design motifs.',
-    price: 180,
-    currency: 'USD',
-    category: 'Fashion',
-    imageUrl: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400',
-    seller: { name: 'Semhar Gold', rating: 4.7 },
-    location: 'Dallas, TX',
-    condition: 'New',
-    createdAt: '2026-03-11T12:00:00Z',
-  },
-  {
-    id: 'demo-5',
-    title: 'Berbere Spice Mix — Homemade',
-    description: 'Authentic homemade berbere spice blend. Family recipe passed down through generations. 500g bag.',
-    price: 18,
-    currency: 'USD',
-    category: 'Food',
-    imageUrl: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400',
-    seller: { name: 'Mama Zewdi Kitchen', rating: 5.0 },
-    location: 'Minneapolis, MN',
-    condition: 'New',
-    createdAt: '2026-03-10T08:00:00Z',
-  },
-  {
-    id: 'demo-6',
-    title: 'iPhone 14 Pro — Unlocked',
-    description: 'Gently used iPhone 14 Pro, 256GB, Space Black. Unlocked, works with all carriers. Comes with case.',
-    price: 650,
-    currency: 'USD',
-    category: 'Electronics',
-    imageUrl: 'https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400',
-    seller: { name: 'Dawit Tech', rating: 4.6 },
-    location: 'San Jose, CA',
-    condition: 'Used - Like New',
-    createdAt: '2026-03-09T14:00:00Z',
-  },
-  {
-    id: 'demo-7',
-    title: 'Mesob Basket — Large Woven',
-    description: 'Traditional Ethiopian/Eritrean mesob serving basket. Hand-woven with colorful patterns. Great for serving injera.',
-    price: 120,
-    currency: 'USD',
-    category: 'Other',
-    imageUrl: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=400',
-    seller: { name: 'Habesha Artisans', rating: 4.9 },
-    location: 'Silver Spring, MD',
-    condition: 'New',
-    createdAt: '2026-03-08T11:00:00Z',
-  },
-  {
-    id: 'demo-8',
-    title: 'Car Detailing Service',
-    description: 'Professional mobile car detailing. Interior and exterior. Habesha-owned business serving the Seattle area.',
-    price: 75,
-    currency: 'USD',
-    category: 'Services',
-    imageUrl: 'https://images.unsplash.com/photo-1520340356584-f9166066d1c6?w=400',
-    seller: { name: 'Yonas Auto Detail', rating: 4.8 },
-    location: 'Seattle, WA',
-    condition: 'New',
-    createdAt: '2026-03-07T16:00:00Z',
-  },
-  {
-    id: 'demo-9',
-    title: '2018 Toyota Camry SE',
-    description: 'Reliable sedan, 65K miles, clean title. Single owner, regular maintenance. Great condition.',
-    price: 18500,
-    currency: 'USD',
-    category: 'Vehicles',
-    imageUrl: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=400',
-    seller: { name: 'Solomon Motors', rating: 4.5 },
-    location: 'Renton, WA',
-    condition: 'Used',
-    createdAt: '2026-03-06T10:00:00Z',
-  },
+const ITEMS = [
+  { id: '1', title: 'Handmade Jebena Coffee Set', price: '$85', category: 'Traditional', seller: 'Abel G.', location: 'Minneapolis, MN', img: '☕' },
+  { id: '2', title: 'Traditional Coffee Ceremony Kit', price: '$120', category: 'Traditional', seller: 'Meron T.', location: 'Seattle, WA', img: '🫖' },
+  { id: '3', title: 'Habesha Kemis - White/Gold', price: '$180', category: 'Clothing', seller: 'Almaz N.', location: 'Washington, DC', img: '👗' },
+  { id: '4', title: 'Netela (Traditional Shawl)', price: '$65', category: 'Clothing', seller: 'Sara A.', location: 'Atlanta, GA', img: '🧣' },
+  { id: '5', title: 'Mesob (Injera Basket)', price: '$95', category: 'Traditional', seller: 'Dawit K.', location: 'Seattle, WA', img: '🧺' },
+  { id: '6', title: 'Berbere Spice Mix (1lb)', price: '$15', category: 'Food & Spice', seller: 'Helen B.', location: 'Los Angeles, CA', img: '🌶️' },
+  { id: '7', title: 'Mitmita Hot Spice Blend', price: '$12', category: 'Food & Spice', seller: 'Helen B.', location: 'Los Angeles, CA', img: '🫙' },
+  { id: '8', title: 'Ethiopian Cross Necklace - Silver', price: '$45', category: 'Jewelry', seller: 'Tigist L.', location: 'Atlanta, GA', img: '✝️' },
+  { id: '9', title: 'Habesha Gold Earrings', price: '$75', category: 'Jewelry', seller: 'Rahel W.', location: 'Washington, DC', img: '💍' },
+  { id: '10', title: 'Ethiopian Canvas Art - Addis Skyline', price: '$150', category: 'Art & Decor', seller: 'Samuel D.', location: 'Seattle, WA', img: '🎨' },
+  { id: '11', title: 'Queen of Sheba Painting (framed)', price: '$200', category: 'Art & Decor', seller: 'Yonas M.', location: 'Washington, DC', img: '🖼️' },
+  { id: '12', title: 'Teff Flour (5lb bag)', price: '$18', category: 'Food & Spice', seller: 'Merkato Market', location: 'Seattle, WA', img: '🌾' },
+  { id: '13', title: 'Traditional Eritrean Dress', price: '$160', category: 'Clothing', seller: 'Fatima O.', location: 'Minneapolis, MN', img: '👘' },
+  { id: '14', title: 'Ge\'ez Script Wall Art', price: '$80', category: 'Art & Decor', seller: 'Bereket H.', location: 'Atlanta, GA', img: '📜' },
+  { id: '15', title: 'Ethiopian History Book Collection', price: '$45', category: 'Books', seller: 'Michael A.', location: 'Washington, DC', img: '📚' },
+  { id: '16', title: 'Amharic Children\'s Books (set of 5)', price: '$35', category: 'Books', seller: 'Kidist R.', location: 'Minneapolis, MN', img: '📖' },
+  { id: '17', title: 'Handwoven Habesha Basket Set', price: '$55', category: 'Art & Decor', seller: 'Liya F.', location: 'Los Angeles, CA', img: '🪺' },
+  { id: '18', title: 'Ethiopian Flag Bracelet', price: '$20', category: 'Jewelry', seller: 'Robel T.', location: 'Seattle, WA', img: '🇪🇹' },
+  { id: '19', title: 'Shiro Powder (2lb)', price: '$10', category: 'Food & Spice', seller: 'Tsehay G.', location: 'Atlanta, GA', img: '🥘' },
+  { id: '20', title: 'iPhone 14 Pro (used, great condition)', price: '$550', category: 'Electronics', seller: 'Ephrem B.', location: 'Washington, DC', img: '📱' },
+  { id: '21', title: 'Traditional Zuriya Dress', price: '$140', category: 'Clothing', seller: 'Hiwot Z.', location: 'Los Angeles, CA', img: '👗' },
+  { id: '22', title: 'Handmade Incense & Etan Set', price: '$25', category: 'Traditional', seller: 'Abel G.', location: 'Minneapolis, MN', img: '🕯️' },
+  { id: '23', title: 'Habesha Spice Gift Box', price: '$40', category: 'Food & Spice', seller: 'Merkato Market', location: 'Seattle, WA', img: '🎁' },
+  { id: '24', title: 'Photography: Habesha Weddings', price: '$3,000', category: 'Services', seller: 'Henok G.', location: 'Washington, DC', img: '📸' },
 ];
 
 export default function MarketplacePage() {
   useAnalytics();
-  const [category, setCategory] = useState('All');
   const [search, setSearch] = useState('');
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState('All');
+  const [priceRange, setPriceRange] = useState('All');
 
-  useEffect(() => {
-    async function fetchProducts() {
-      setLoading(true);
-      try {
-        const params = {};
-        if (category !== 'All') params.category = category;
-        if (search) params.search = search;
-        const res = await api.get('/marketplace', { params });
-        const data = res.data?.data || res.data || [];
-        setProducts(data.length > 0 ? data : DEMO_PRODUCTS);
-      } catch (err) {
-        setProducts(DEMO_PRODUCTS);
-      } finally {
-        setLoading(false);
-      }
+  const filtered = ITEMS.filter((item) => {
+    if (category !== 'All' && item.category !== category) return false;
+    if (search && !item.title.toLowerCase().includes(search.toLowerCase()) && !item.seller.toLowerCase().includes(search.toLowerCase())) return false;
+    if (priceRange !== 'All') {
+      const price = parseInt(item.price.replace(/[$,]/g, ''));
+      if (priceRange === 'Under $25' && price >= 25) return false;
+      if (priceRange === '$25-$100' && (price < 25 || price > 100)) return false;
+      if (priceRange === '$100-$500' && (price < 100 || price > 500)) return false;
+      if (priceRange === '$500+' && price < 500) return false;
     }
-    fetchProducts();
-  }, [category, search]);
-
-  const filtered = products.filter((p) => {
-    const matchCat = category === 'All' || p.category === category;
-    const matchSearch = !search || p.title?.toLowerCase().includes(search.toLowerCase()) || p.description?.toLowerCase().includes(search.toLowerCase());
-    return matchCat && matchSearch;
+    return true;
   });
 
   return (
     <AppLayout>
-      <div className="mx-auto max-w-5xl px-4 py-6">
-        <div className="mb-6 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Marketplace</h1>
-          <button className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-dark">
-            <FiPlus size={16} />
-            Sell Item
+      <div className="max-w-5xl mx-auto px-4 py-6">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h1 className="text-2xl font-bold text-white">Marketplace</h1>
+            <p className="text-gray-400 text-sm">{ITEMS.length} items from the community</p>
+          </div>
+          <button className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded-xl text-sm flex items-center gap-2">
+            <FiPlus size={16} /> List Item
           </button>
         </div>
 
+        {/* Search */}
         <div className="relative mb-4">
-          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+          <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
           <input
-            type="text"
-            placeholder="Search marketplace..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pl-10 pr-4 text-sm focus:border-primary focus:outline-none dark:border-dark-700 dark:bg-dark-800 dark:text-white"
+            placeholder="Search marketplace..."
+            className="w-full pl-11 pr-4 py-3 bg-gray-900 border border-gray-800 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
           />
         </div>
 
-        <div className="mb-6 flex flex-wrap gap-2">
-          {CATEGORIES.map((cat) => (
+        {/* Filters */}
+        <div className="flex gap-4 mb-6 overflow-x-auto pb-2">
+          <div className="flex gap-2 scrollbar-hide">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setCategory(cat)}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
+                  category === cat ? 'bg-amber-500 text-black' : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Price filter */}
+        <div className="flex gap-2 mb-6">
+          {['All', 'Under $25', '$25-$100', '$100-$500', '$500+'].map((range) => (
             <button
-              key={cat}
-              onClick={() => setCategory(cat)}
-              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                category === cat
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-dark-700 dark:text-gray-300'
+              key={range}
+              onClick={() => setPriceRange(range)}
+              className={`px-3 py-1 rounded-lg text-xs font-medium transition-colors ${
+                priceRange === range ? 'bg-gray-700 text-white' : 'bg-gray-900 text-gray-500 hover:bg-gray-800'
               }`}
             >
-              {cat}
+              {range}
             </button>
           ))}
         </div>
 
-        {loading ? (
-          <div className="flex justify-center py-12">
-            <FiLoader className="animate-spin text-primary" size={24} />
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className="rounded-xl bg-gray-50 p-8 text-center dark:bg-dark-800">
-            <p className="font-semibold text-gray-700 dark:text-gray-300">No products found</p>
-            <p className="text-sm text-gray-500">Try a different category or search term.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+        {/* Items grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {filtered.map((item) => (
+            <Link
+              key={item.id}
+              href={`/marketplace/${item.id}`}
+              className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 transition-colors group"
+            >
+              <div className="aspect-square bg-gray-800 flex items-center justify-center text-4xl">
+                {item.img}
+              </div>
+              <div className="p-3">
+                <div className="text-amber-400 font-bold mb-1">{item.price}</div>
+                <h3 className="text-sm font-medium text-white line-clamp-2 group-hover:text-amber-400 transition-colors">{item.title}</h3>
+                <div className="flex items-center gap-1 mt-2 text-xs text-gray-500">
+                  <FiMapPin size={10} /> {item.location}
+                </div>
+                <div className="text-xs text-gray-500 mt-1">{item.seller}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {filtered.length === 0 && (
+          <div className="text-center py-12 text-gray-500">No items match your filters</div>
         )}
       </div>
     </AppLayout>
