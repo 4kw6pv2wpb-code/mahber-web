@@ -362,6 +362,36 @@ export default function LandingPage() {
         </div>
       </section>
 
+
+      {/* — FAQ — */}
+      <section className="py-20 bg-white dark:bg-dark-900">
+        <div className="mx-auto max-w-3xl px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              { q: 'Is HabeshaHub free to use?', a: 'Yes! Joining the waitlist and core features are completely free. Premium features like promoted listings may have optional fees in the future.' },
+              { q: 'Who is HabeshaHub for?', a: 'HabeshaHub is built for the Ethiopian, Eritrean, and Somali diaspora worldwide. Whether you are in the US, Canada, Europe, or the Middle East, this platform is for you.' },
+              { q: 'How is HabeshaHub different from Facebook groups?', a: 'Unlike scattered Facebook groups, HabeshaHub is an all-in-one platform with 10 dedicated tools: jobs, housing, marketplace, remittance, dating, events, videos, translation, immigration resources, and community forums.' },
+              { q: 'How does the remittance feature work?', a: 'HabeshaHub offers money transfers to Ethiopia, Eritrea, and Somalia with a flat 1% fee and live exchange rates. Much cheaper than traditional services that charge $15-30 per transfer.' },
+              { q: 'Is my data safe?', a: 'Absolutely. We use industry-standard encryption and never sell your data. Your privacy and security are our top priority.' },
+              { q: 'When will the app launch?', a: 'We are currently in beta! Join the waitlist to get early access and be among the first to experience the full platform.' },
+            ].map((faq, i) => (
+              <details key={i} className="group rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-800 p-4">
+                <summary className="flex cursor-pointer items-center justify-between font-semibold text-gray-900 dark:text-white">
+                  {faq.q}
+                  <FiChevronRight className="transition-transform group-open:rotate-90" />
+                </summary>
+                <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 text-center">
