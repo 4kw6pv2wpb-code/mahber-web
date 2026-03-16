@@ -9,6 +9,7 @@ import { useAuth } from '@/lib/auth-context';
 import { useAnalytics } from '@/lib/useAnalytics';
 
 const LANGUAGES = ['English', 'Amharic', 'Tigrinya', 'Somali', 'Oromo'];
+const LANGUAGE_MAP = { English: 'EN', Amharic: 'AM', Tigrinya: 'TI', Somali: 'SO', Oromo: 'OR' };
 
 export default function RegisterPage() {
   useAnalytics();
@@ -39,7 +40,7 @@ export default function RegisterPage() {
       const res = await fetch('/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'register', ...form }),
+        body: JSON.stringify({ action: 'register', ...form, languages: form.languages.map(l => LANGUAGE_MAP[l] || l) }),
       });
       const data = await res.json();
       if (!res.ok || data.error) {
