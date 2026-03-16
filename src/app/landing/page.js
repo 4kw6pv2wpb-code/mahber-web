@@ -271,6 +271,59 @@ export default function LandingPage() {
         </div>
       </section>
 
+
+                {/* — Why HabeshaHub — */}
+      <section className="py-20 bg-white dark:bg-dark-900">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+              Why HabeshaHub?
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-gray-500 dark:text-gray-400">
+              Other apps serve one need. We serve your whole community.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b-2 border-primary">
+                  <th className="py-4 px-4 text-sm font-bold text-gray-900 dark:text-white">Feature</th>
+                  <th className="py-4 px-4 text-sm font-bold text-primary text-center">HabeshaHub</th>
+                  <th className="py-4 px-4 text-sm font-bold text-gray-400 text-center">Dendasho</th>
+                  <th className="py-4 px-4 text-sm font-bold text-gray-400 text-center">Facebook Groups</th>
+                  <th className="py-4 px-4 text-sm font-bold text-gray-400 text-center">Konjo</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Jobs Board', true, true, false, false],
+                  ['Housing & Rooms', true, true, true, false],
+                  ['Marketplace', true, true, true, false],
+                  ['Remittance (1% fee)', true, false, false, false],
+                  ['Dating (HabeshaMatch)', true, false, false, true],
+                  ['Events & Community', true, false, true, false],
+                  ['Video Feed', true, false, false, false],
+                  ['Translation (6 languages)', true, false, false, false],
+                  ['Immigration Resources', true, false, false, false],
+                  ['Somali Community', true, false, false, false],
+                ].map(([feature, hh, den, fb, konjo], i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-gray-50 dark:bg-dark-800' : ''}>
+                    <td className="py-3 px-4 text-sm font-medium text-gray-700 dark:text-gray-300">{feature}</td>
+                    <td className="py-3 px-4 text-center">{hh ? <FiCheck className="inline text-habesha-green text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                    <td className="py-3 px-4 text-center">{den ? <FiCheck className="inline text-gray-400 text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                    <td className="py-3 px-4 text-center">{fb ? <FiCheck className="inline text-gray-400 text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                    <td className="py-3 px-4 text-center">{konjo ? <FiCheck className="inline text-gray-400 text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            10 tools in one platform — no other app comes close.
+          </p>
+        </div>
+      </section>
+
       {/* ── Testimonials ── */}
       <section id="community" className="bg-gray-50/50 py-20 dark:bg-dark-900/50">
         <div className="mx-auto max-w-6xl px-4">
