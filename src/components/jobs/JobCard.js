@@ -4,13 +4,19 @@ import { FiMapPin, FiClock, FiDollarSign, FiBookmark } from 'react-icons/fi';
 import { Badge } from '@/components/ui/Badge';
 import Link from 'next/link';
 
+function formatSalary(amount) {
+  if (!amount || amount === 0) return '';
+  if (amount >= 1000) return `$${Math.floor(amount / 1000)}k`;
+  return `$${amount}/hr`;
+}
+
 export function JobCard({ job }) {
   const typeMap = { FULL_TIME: 'Full-time', PART_TIME: 'Part-time', CONTRACT: 'Contract', INTERNSHIP: 'Internship' };
   const typeDisplay = typeMap[job.jobType] || job.jobType || job.type || 'Other';
   const typeColors = { 'Full-time': 'green', 'Part-time': 'blue', 'Remote': 'primary', 'Contract': 'accent' };
   const company = job.company || job.poster?.name || 'Company';
   const location = job.location || [job.city, job.country].filter(Boolean).join(', ') || 'Remote';
-  const salary = job.salary || (job.payMin && job.payMax ? `$${(job.payMin/1000).toFixed(0)}k - $${(job.payMax/1000).toFixed(0)}k` : job.payMin ? `$${(job.payMin/1000).toFixed(0)}k+` : '');
+  const salary = job.salary || (job.payMin && job.payMax ? `${formatSalary(job.payMin)} - ${formatSalary(job.payMax)}` : job.payMin ? `${formatSalary(job.payMin)}+` : '');
   const posted = job.posted || (job.createdAt ? new Date(job.createdAt).toLocaleDateString() : '');
 
   return (
