@@ -3,11 +3,16 @@
 import { useState } from 'react';
 import { FiHeart, FiMessageCircle, FiShare2, FiBookmark, FiMoreHorizontal } from 'react-icons/fi';
 import { Avatar } from '@/components/ui/Avatar';
+import Image from 'next/image';
 
 export function PostCard({ post }) {
+  const authorName = typeof post.author === 'string' ? post.author : post.author?.name || 'User';
+  const authorAvatar = typeof post.author === 'object' ? post.author?.avatarUrl : null;
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [likeCount, setLikeCount] = useState(post.likes || 0);
+  const [likeCount, setLikeCount] = useState(post.likesCount || post.likes || 0);
+  const timeAgo = post.time || (post.createdAt ? new Date(post.createdAt).toLocaleDateString() : '');
+  const image = post.image || post.mediaUrl;
 
   const toggleLike = () => {
     setLiked(!liked);
@@ -16,50 +21,31 @@ export function PostCard({ post }) {
 
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-dark-700 dark:bg-dark-800">
-      {/* Header */}
       <div className="mb-3 flex items-start justify-between">
         <div className="flex items-center gap-3">
-          <Avatar name={post.author} size="md" />
+          <Avatar name={authorName} src={authorAvatar} size="md" />
           <div>
-            <p className="text-sm font-semibold text-gray-900 dark:text-white">{post.author}</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">{post.time} · {post.location}</p>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white">{authorName}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">{timeAgo}{post.location ? ` · ${post.location}` : ''}</p>
           </div>
         </div>
-        <button className="rounded-lg p-1 text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-700"><FiMoreHorizontal size={18} /></button>
+        <button className="rounded-lg p-1 text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-700"><FiMoreHorizontal /></button>
       </div>
-
-      {/* Content */}
       <p className="mb-3 text-sm leading-relaxed text-gray-800 dark:text-gray-200">{post.content}</p>
-
-      {post.image && (
-        <div className="mb-3 overflow-hidden rounded-xl">
-          <div className={`flex h-64 items-center justify-center ${post.imageBg || 'bg-gradient-to-br from-primary/20 to-habesha-green/20'}`}>
-            <span className="text-sm text-gray-500">{post.imageAlt || '📷 Photo'}</span>
-          </div>
+      {image && (
+        <div className="mb-3 overflow-hidden rounded-lg">
+          <img src={image} alt="" className="w-full object-cover" style={{ maxHeight: '400px' }} />
         </div>
       )}
-
-      {/* Stats */}
-      <div className="mb-2 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-        <span>{likeCount} likes</span>
-        <span>{post.comments || 0} comments · {post.shares || 0} shares</span>
-      </div>
-
-      <div className="border-t border-gray-100 pt-2 dark:border-dark-700">
-        <div className="flex items-center justify-between">
-          <button onClick={toggleLike} className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${liked ? 'text-accent' : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-dark-700'}`}>
-            <FiHeart size={18} className={liked ? 'fill-accent' : ''} /> Like
+      <div className="flex items-center justify-between border-t border-gray-100 pt-3 dark:border-dark-700">
+        <div className="flex gap-4">
+          <button onClick={toggleLike} className={`flex items-center gap-1.5 text-sm ${liked ? 'text-red-500' : 'text-gray-500'}`}>
+            <FiHeart size={18} className={liked ? 'fill-current' : ''} />{likeCount}
           </button>
-          <button className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-dark-700">
-            <FiMessageCircle size={18} /> Comment
-          </button>
-          <button className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-dark-700">
-            <FiShare2 size={18} /> Share
-          </button>
-          <button onClick={() => setSaved(!saved)} className={`rounded-lg p-1.5 transition-colors ${saved ? 'text-primary' : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-dark-700'}`}>
-            <FiBookmark size={18} className={saved ? 'fill-primary' : ''} />
-          </button>
+          <button className="flex items-center gap-1.5 text-sm text-gray-500"><FiMessageCircle size={18} />{post.commentsCount || post.comments || 0}</button>
+          <button className="flex items-center gap-1.5 text-sm text-gray-500"><FiShare2 size={18} /></button>
         </div>
+        <button onClick={() => setSaved(!saved)} className={saved ? 'text-primary' : 'text-gray-400'}><FiBookmark size={18} className={saved ? 'fill-current' : ''} /></button>
       </div>
     </div>
   );
