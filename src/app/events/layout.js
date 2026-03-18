@@ -1,7 +1,7 @@
 export const metadata = {
-  title: 'Events — Habesha Community Events Near You',
+  title: 'Events — Discover Habesha Community Events & Festivals',
   description:
-    'Discover Ethiopian, Eritrean & Somali community events, festivals, cultural celebrations, and networking meetups across the US.',
+    'Discover Ethiopian, Eritrean & Somali community events, festivals, cultural celebrations, and networking meetups across the US and worldwide.',
   openGraph: {
     title: 'Events | HabeshaHub',
     description:
@@ -12,7 +12,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Events | HabeshaHub',
-    description: 'Habesha community events, festivals & meetups.',
+    description: 'Habesha community events, festivals, celebrations & meetups.',
     images: ['/og-image.png'],
   },
 };

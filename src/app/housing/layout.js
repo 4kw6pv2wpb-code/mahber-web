@@ -1,7 +1,7 @@
 export const metadata = {
-  title: 'Housing — Habesha-Friendly Rentals & Rooms',
+  title: 'Housing — Find Habesha-Friendly Rentals, Rooms & Housing',
   description:
-    'Find apartments, rooms, houses, and sublets in Habesha communities across Seattle, DC, LA, Atlanta, Minneapolis and more.',
+    'Find apartments, rooms, houses, and sublets in Habesha communities across Seattle, DC, LA, Atlanta, Minneapolis, and more cities nationwide.',
   openGraph: {
     title: 'Housing | HabeshaHub',
     description:
@@ -12,7 +12,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Housing | HabeshaHub',
-    description: 'Habesha-friendly rentals & rooms across the US.',
+    description: 'Habesha-friendly rentals, rooms & housing across the US.',
     images: ['/og-image.png'],
   },
 };

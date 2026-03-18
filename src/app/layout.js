@@ -10,28 +10,9 @@ export const metadata = {
     template: '%s | HabeshaHub',
   },
   description:
-    'The all-in-one platform for Ethiopian, Eritrean, and Somali diaspora communities. Jobs, housing, events, marketplace, dating, immigration resources, remittance, and more — all in one place.',
-  keywords: [
-    'habesha',
-    'Ethiopian diaspora',
-    'Eritrean diaspora',
-    'Somali diaspora',
-    'habesha app',
-    'African diaspora',
-    'ethiopian jobs',
-    'habesha dating',
-    'remittance ethiopia',
-    'habesha community',
-    'horn of africa diaspora',
-    'jobs',
-    'housing',
-    'events',
-    'marketplace',
-    'dating',
-    'immigration',
-    'remittance',
-    'community',
-  ],
+    'All-in-one platform for Ethiopian, Eritrean & Somali communities worldwide. Community, Jobs, Housing, Events, Marketplace, Dating, Remittance & more.',
+  keywords:
+    'habesha, ethiopian, eritrean, somali, diaspora, community, jobs, housing, events, marketplace, dating, remittance, super app',
   authors: [{ name: 'HabeshaHub' }],
   creator: 'HabeshaHub',
   publisher: 'HabeshaHub',
@@ -51,17 +32,21 @@ export const metadata = {
     apple: '/apple-icon.svg',
   },
   metadataBase: new URL('https://habeshahub-web-production.up.railway.app'),
+  alternates: {
+    canonical: 'https://habeshahub-web-production.up.railway.app',
+  },
+  themeColor: '#0F172A',
   openGraph: {
     title: 'HabeshaHub — The Diaspora Super App',
     description:
-      'Connect with the Ethiopian, Eritrean, and Somali diaspora. Jobs, housing, events, marketplace, dating, immigration help, and more.',
+      'All-in-one platform for Ethiopian, Eritrean & Somali communities worldwide. Community, Jobs, Housing, Events, Marketplace, Dating, Remittance & more.',
     siteName: 'HabeshaHub',
     url: 'https://habeshahub-web-production.up.railway.app',
     type: 'website',
     locale: 'en_US',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://habeshahub-web-production.up.railway.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'HabeshaHub — The Diaspora Super App',
@@ -72,8 +57,8 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'HabeshaHub — The Diaspora Super App',
     description:
-      'Connect with the Ethiopian, Eritrean, and Somali diaspora. Jobs, housing, events, marketplace, dating, immigration help, and more.',
-    images: ['/og-image.png'],
+      'All-in-one platform for Ethiopian, Eritrean & Somali communities worldwide. Community, Jobs, Housing, Events, Marketplace, Dating, Remittance & more.',
+    images: ['https://habeshahub-web-production.up.railway.app/og-image.png'],
     creator: '@habeshahubapp',
   },
 };
@@ -82,6 +67,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: 'HabeshaHub',
+              description:
+                'The all-in-one super app for the Ethiopian, Eritrean & Somali diaspora',
+              url: 'https://habeshahub-web-production.up.railway.app',
+              applicationCategory: 'SocialNetworkingApplication',
+              operatingSystem: 'Web',
+            }),
+          }}
+        />
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
