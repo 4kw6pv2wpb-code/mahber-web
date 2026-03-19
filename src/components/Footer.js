@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -32,9 +32,9 @@ const FOOTER_LINKS = {
     { label: 'DMCA Policy', href: '/dmca' },
   ],
   Connect: [
-    { label: 'Instagram', href: 'https://instagram.com/habeshahubapp' },
-    { label: 'TikTok', href: 'https://tiktok.com/@habeshahubapp' },
-    { label: 'X / Twitter', href: 'https://x.com/habeshahubapp' },
+    { label: 'Instagram', href: 'https://instagram.com/mahberapp' },
+    { label: 'TikTok', href: 'https://tiktok.com/@mahberapp' },
+    { label: 'X / Twitter', href: 'https://x.com/mahberapp' },
     { label: 'Download App', href: '/download' },
   ],
 };
@@ -90,7 +90,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-600 text-xs">
-            &copy; {new Date().getFullYear()} HabeshaHub, Inc. All rights reserved. Built in Seattle.
+            &copy; {new Date().getFullYear()} Mahber, Inc. All rights reserved. Built in Seattle.
           </p>
           <p className="text-gray-700 text-xs">
             Made with love for the Habesha diaspora

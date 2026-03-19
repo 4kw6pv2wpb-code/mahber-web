@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -50,7 +50,7 @@ export async function POST(request) {
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  if (searchParams.get('password') !== 'habeshahub2026') {
+  if (searchParams.get('password') !== 'mahber2026') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   return NextResponse.json({ contacts: readContacts() });

@@ -1,4 +1,4 @@
-# HabeshaHub Web
+# Mahber Web
 
 [![CI](https://github.com/4kw6pv2wpb-code/habeshahub-web/actions/workflows/ci.yml/badge.svg)](https://github.com/4kw6pv2wpb-code/habeshahub-web/actions/workflows/ci.yml)
 [![Deploy](https://img.shields.io/badge/deploy-Railway-blueviolet)](https://habeshahub-web-production.up.railway.app)
@@ -31,7 +31,7 @@
 - **Framework:** Next.js 14 (App Router)
 - **Styling:** Tailwind CSS 3.4
 - **UI:** React 18, Headless UI, React Icons
-- **Backend:** HabeshaHub API (Node.js/Express/Prisma)
+- **Backend:** Mahber API (Node.js/Express/Prisma)
 - **Database:** PostgreSQL + Redis
 - **Deployment:** Railway
 - **CI/CD:** GitHub Actions
@@ -101,8 +101,8 @@ npm start
 
 ## Related Repos
 
-- [habeshahub-backend](https://github.com/4kw6pv2wpb-code/habeshahub-backend) - API server
-- [habeshahub-mobile](https://github.com/4kw6pv2wpb-code/habeshahub-mobile) - React Native app
+- [mahber-backend](https://github.com/4kw6pv2wpb-code/habeshahub-backend) - API server
+- [mahber-mobile](https://github.com/4kw6pv2wpb-code/habeshahub-mobile) - React Native app
 
 ## License
 

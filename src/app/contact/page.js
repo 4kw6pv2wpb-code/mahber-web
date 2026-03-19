@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -46,7 +46,7 @@ export default function ContactPage() {
       </div>
       <div className="max-w-2xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
         <h1 className="text-4xl font-bold mb-2">Get in Touch</h1>
         <p className="text-gray-400 mb-10">Have a question, partnership idea, or feedback? We would love to hear from you.</p>
@@ -56,7 +56,7 @@ export default function ContactPage() {
             <FiMail className="text-amber-400 mt-1" />
             <div>
               <div className="font-semibold">Email</div>
-              <div className="text-gray-400 text-sm">hello@habeshahub.com</div>
+              <div className="text-gray-400 text-sm">hello@mahber.com</div>
             </div>
           </div>
           <div className="flex items-start gap-3">

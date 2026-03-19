@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -14,8 +14,8 @@ import Footer from '@/components/Footer';
 
 const POSTS = [
   {
-    slug: 'why-we-built-habeshahub',
-    title: 'Why We Built HabeshaHub',
+    slug: 'why-we-built-mahber',
+    title: 'Why We Built Mahber',
     excerpt: 'The Habesha diaspora deserves more than scattered Facebook groups. Here is the story of why we are building the super app our community needs.',
     date: 'March 10, 2026',
     readTime: '6 min read',
@@ -55,7 +55,7 @@ export default function BlogPage() {
 
       <div className="max-w-3xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>

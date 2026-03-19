@@ -1,11 +1,10 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
-
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -53,12 +52,10 @@ export default function RegisterPage() {
       if (!res.ok || data.error) {
         setError(typeof data.error === 'string' ? data.error : 'Registration failed. Please try again.');
       } else {
-        // Store token and user in localStorage
         if (data.token) setToken(data.token);
         if (data.refreshToken) setRefreshToken(data.refreshToken);
         if (data.user) {
-          localStorage.setItem('habeshahub_user', JSON.stringify(data.user));
-          // Update auth context so the app knows the user is logged in
+          localStorage.setItem('mahber_user', JSON.stringify(data.user));
           updateUser(data.user);
         }
         router.push('/home');
@@ -86,9 +83,12 @@ export default function RegisterPage() {
 
         <div className="relative z-10 px-12 text-center">
           <div className="mb-6 flex items-center justify-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500 text-2xl font-bold text-white shadow-lg shadow-amber-500/20">
-              H
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500 text-2xl font-bold text-white shadow-lg shadow-amber-500/30">
+              M
             </div>
+            <span className="text-3xl font-bold text-white">
+              Mahber
+            </span>
           </div>
           <h2 className="text-3xl font-extrabold text-white">
             Join the <br />
@@ -121,10 +121,10 @@ export default function RegisterPage() {
           {/* Mobile logo */}
           <div className="mb-8 flex items-center justify-center gap-3 lg:hidden">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500 text-xl font-bold text-white shadow-lg shadow-amber-500/20">
-              H
+              M
             </div>
             <span className="text-2xl font-bold text-navy">
-              Habesha<span className="text-amber-500">Hub</span>
+              Mahber
             </span>
           </div>
 

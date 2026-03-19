@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -18,7 +18,7 @@ const MOCK_NOTIFICATIONS = [
   { id: 3, type: 'event', icon: FiCalendar, color: 'text-green-400 bg-green-500/10', title: 'Event Reminder: Habesha Professional Networking Night', body: 'Starts tomorrow at 7:00 PM at The Loft, Washington DC', time: '1h ago', read: false },
   { id: 4, type: 'community', icon: FiUsers, color: 'text-purple-400 bg-purple-500/10', title: 'Yonas M. replied to your post', body: '"Great idea! I would be interested in the developer meetup. Count me in..."', time: '2h ago', read: false },
   { id: 5, type: 'dating', icon: FiHeart, color: 'text-pink-400 bg-pink-500/10', title: 'New match on HabeshaMatch!', body: 'You and Sara have matched. Send a message to start the conversation.', time: '3h ago', read: true },
-  { id: 6, type: 'waitlist', icon: FiBell, color: 'text-amber-400 bg-amber-500/10', title: 'HabeshaHub Launch Update', body: 'We are launching April 1st! You are #47 on the waitlist. Share with friends to move up.', time: '5h ago', read: true },
+  { id: 6, type: 'waitlist', icon: FiBell, color: 'text-amber-400 bg-amber-500/10', title: 'Mahber Launch Update', body: 'We are launching April 1st! You are #47 on the waitlist. Share with friends to move up.', time: '5h ago', read: true },
   { id: 7, type: 'money', icon: FiDollarSign, color: 'text-green-400 bg-green-500/10', title: 'Remittance sent successfully', body: 'Your transfer of $300 to Addis Ababa has been completed. Recipient: Abeba T.', time: '1d ago', read: true },
   { id: 8, type: 'community', icon: FiUsers, color: 'text-purple-400 bg-purple-500/10', title: '15 upvotes on your post', body: '"Best Ethiopian restaurant in Seattle?" is gaining traction in the community.', time: '1d ago', read: true },
   { id: 9, type: 'job', icon: FiBriefcase, color: 'text-amber-400 bg-amber-500/10', title: 'Your job application was viewed', body: 'Habesha Tech Solutions viewed your application for IT Support Specialist.', time: '2d ago', read: true },

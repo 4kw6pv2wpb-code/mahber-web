@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -151,7 +151,7 @@ export default function LaunchPage() {
               We&apos;re Live!
             </div>
             <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl">
-              HabeshaHub is{' '}
+              Mahber is{' '}
               <span className="bg-gradient-to-r from-primary via-amber-400 to-primary bg-clip-text text-transparent">here</span>
             </h1>
           </>
@@ -250,7 +250,7 @@ export default function LaunchPage() {
           <span className="h-2 w-2 rounded-full bg-habesha-green" />
           <span className="h-2 w-2 rounded-full bg-habesha-yellow" />
           <span className="h-2 w-2 rounded-full bg-habesha-red" />
-          <span className="ml-2 text-xs text-gray-500">&copy; {new Date().getFullYear()} HabeshaHub — Built for the culture</span>
+          <span className="ml-2 text-xs text-gray-500">&copy; {new Date().getFullYear()} Mahber — Built for the culture</span>
         </div>
       </div>
     </div>

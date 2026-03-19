@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -14,7 +14,7 @@ import Footer from '@/components/Footer';
 
 const VALUES = [
   { icon: FiHeart, title: 'Community First', desc: 'Every feature is built with our community in mind. We listen, we iterate, we serve.' },
-  { icon: FiGlobe, title: 'Diaspora Connected', desc: 'Whether you are in Seattle, DC, or Addis, HabeshaHub keeps you plugged in.' },
+  { icon: FiGlobe, title: 'Diaspora Connected', desc: 'Whether you are in Seattle, DC, or Addis, Mahber keeps you plugged in.' },
   { icon: FiZap, title: 'Built Different', desc: 'No more scattered Facebook groups. One platform, every need, beautifully integrated.' },
   { icon: FiUsers, title: 'By Us, For Us', desc: 'Founded by a first-gen Habesha developer who lived the problem.' },
 ];
@@ -32,7 +32,7 @@ export default function AboutPage() {
 
       <div className="max-w-4xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
 
         {/* Hero */}
@@ -42,7 +42,7 @@ export default function AboutPage() {
             <span className="text-amber-400">better than scattered Facebook groups.</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
-            HabeshaHub is the all-in-one platform for the Ethiopian, Eritrean, and Somali diaspora.
+            Mahber is the all-in-one platform for the Ethiopian, Eritrean, and Somali diaspora.
             Built in Seattle by a first-generation Habesha developer who grew up watching our community
             struggle with fragmented tools and disconnected resources.
           </p>
@@ -103,7 +103,7 @@ export default function AboutPage() {
             <p className="text-gray-400 text-sm leading-relaxed">
               First-generation US-born Eritrean. Grew up in Seattle watching the Habesha community
               rely on word-of-mouth and Facebook groups for everything from finding apartments to
-              sending money home. Built HabeshaHub to change that.
+              sending money home. Built Mahber to change that.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function AboutPage() {
               your grandmother's house.
             </p>
             <p>
-              HabeshaHub changes everything. It is the super app our community deserves — jobs,
+              Mahber changes everything. It is the super app our community deserves — jobs,
               housing, events, marketplace, dating, remittance, immigration resources, and
               community forums, all in one platform built specifically for us, by us.
             </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -72,7 +72,7 @@ export async function GET(request) {
     const waitlist = readWaitlist();
 
     // If password provided, return full list (for admin)
-    if (password === 'habeshahub2026') {
+    if (password === 'mahber2026') {
       return NextResponse.json({ count: waitlist.length, entries: waitlist });
     }
 

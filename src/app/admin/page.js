@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -9,7 +9,7 @@
 
 import { useState, useEffect } from 'react';
 
-const PASS = 'habeshahub2026';
+const PASS = 'mahber2026';
 
 export default function AdminPage() {
   const [password, setPassword] = useState('');
@@ -56,7 +56,7 @@ export default function AdminPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `habeshahub-waitlist-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `mahber-waitlist-${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -69,7 +69,7 @@ export default function AdminPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `habeshahub-analytics-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `mahber-analytics-${new Date().toISOString().split('T')[0]}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -126,7 +126,7 @@ export default function AdminPage() {
             <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white font-bold text-sm">
               H
             </div>
-            <span className="font-bold text-lg">HabeshaHub Admin</span>
+            <span className="font-bold text-lg">Mahber Admin</span>
           </div>
           <div className="flex items-center gap-3">
             <button

@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -133,27 +133,10 @@ const HOW_IT_WORKS = [
 ];
 
 const TESTIMONIALS = [
-  {
-    name: 'Selam T.',
-    location: 'Seattle, WA',
-    quote:
-      'I found my apartment, my first tech job, and my best friends here. HabeshaHub is the community center the diaspora has always needed.',
-    stars: 5,
-  },
-  {
-    name: 'Dawit M.',
-    location: 'Washington, DC',
-    quote:
-      'Found my apartment through HabeshaHub in just two weeks. The housing section connected me with a trusted community member.',
-    stars: 5,
-  },
-  {
-    name: 'Fatima H.',
-    location: 'Minneapolis, MN',
-    quote:
-      'Finally, one place for everything Habesha. No more scattered Facebook groups — this app gets it.',
-    stars: 5,
-  },
+  { name: 'Selam T.', location: 'Seattle, WA', heritage: 'Ethiopian', quote: 'I found my apartment, my first tech job, and my best friends here. Mahber is the community center the diaspora has always needed.', stars: 5 },
+  { name: 'Berhane K.', location: 'Washington, DC', heritage: 'Eritrean', quote: 'Sending money home used to cost me $30+ in fees. With Mahber it\u2019s a flat 1\u0025. My family in Asmara gets more, and I spend less.', stars: 5 },
+  { name: 'Fatima H.', location: 'Minneapolis, MN', heritage: 'Somali', quote: 'The immigration resources section literally changed my life. I found a lawyer who spoke my language and understood my case.', stars: 5 },
+  { name: 'Dawit M.', location: 'Los Angeles, CA', heritage: 'Ethiopian', quote: 'I met my fianc\u00e9e on HabeshaMatch. We bonded over our shared Habesha values. This app gets us.', stars: 5 },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -271,7 +254,7 @@ function PhoneMockup() {
                 </div>
               </div>
               <p className="text-[10px] text-gray-600 leading-relaxed">
-                Just landed my dream job through HabeshaHub! The community here is amazing 🎉
+                Just landed my dream job through Mahber! The community here is amazing 🎉
               </p>
               <div className="mt-2 flex gap-3">
                 <span className="text-[8px] text-gray-400">❤️ 24</span>
@@ -646,17 +629,68 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════ */}
-      {/* TESTIMONIALS                                                  */}
-      {/* ══════════════════════════════════════════════════════════════ */}
-      <section id="testimonials" className="py-20 sm:py-28 bg-slate-50" ref={testimonialsRef}>
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="scroll-fade-in mb-14 text-center">
-            <h2 className="font-display text-3xl font-extrabold text-navy sm:text-4xl">
+
+                {/* — Why Mahber — */}
+      <section className="py-20 bg-white dark:bg-dark-900">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+              Why Mahber?
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-gray-500 dark:text-gray-400">
+              Other apps serve one need. We serve your whole community.
+            </p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b-2 border-primary">
+                  <th className="py-4 px-4 text-sm font-bold text-gray-900 dark:text-white">Feature</th>
+                  <th className="py-4 px-4 text-sm font-bold text-primary text-center">Mahber</th>
+                  <th className="py-4 px-4 text-sm font-bold text-gray-400 text-center">Dendasho</th>
+                  <th className="py-4 px-4 text-sm font-bold text-gray-400 text-center">Facebook Groups</th>
+                  <th className="py-4 px-4 text-sm font-bold text-gray-400 text-center">Konjo</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Jobs Board', true, true, false, false],
+                  ['Housing & Rooms', true, true, true, false],
+                  ['Marketplace', true, true, true, false],
+                  ['Remittance (1% fee)', true, false, false, false],
+                  ['Dating (HabeshaMatch)', true, false, false, true],
+                  ['Events & Community', true, false, true, false],
+                  ['Video Feed', true, false, false, false],
+                  ['Translation (6 languages)', true, false, false, false],
+                  ['Immigration Resources', true, false, false, false],
+                  ['Somali Community', true, false, false, false],
+                ].map(([feature, hh, den, fb, konjo], i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-gray-50 dark:bg-dark-800' : ''}>
+                    <td className="py-3 px-4 text-sm font-medium text-gray-700 dark:text-gray-300">{feature}</td>
+                    <td className="py-3 px-4 text-center">{hh ? <FiCheck className="inline text-habesha-green text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                    <td className="py-3 px-4 text-center">{den ? <FiCheck className="inline text-gray-400 text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                    <td className="py-3 px-4 text-center">{fb ? <FiCheck className="inline text-gray-400 text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                    <td className="py-3 px-4 text-center">{konjo ? <FiCheck className="inline text-gray-400 text-lg" /> : <span className="text-gray-300">—</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            10 tools in one platform — no other app comes close.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section id="community" className="bg-gray-50/50 py-20 dark:bg-dark-900/50">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               Voices from the community
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-gray-500">
-              Real stories from diaspora members using HabeshaHub.
+            <p className="mx-auto mt-3 max-w-xl text-gray-500 dark:text-gray-400">
+              Real stories from diaspora members who use Mahber every day.
             </p>
           </div>
 
@@ -719,48 +753,26 @@ export default function LandingPage() {
             </div>
 
             <h2 className="relative font-display text-3xl font-extrabold text-white sm:text-4xl">
-              Join HabeshaHub Today
+              Join Mahber Today
             </h2>
-            <p className="relative mt-4 text-gray-400">
-              Be part of the movement connecting the Horn of Africa diaspora worldwide.
-            </p>
-
-            <form
-              onSubmit={submitCta}
-              className="relative mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center"
-            >
-              <div className="relative flex-1 sm:max-w-sm">
-                <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full rounded-full border border-gray-700 bg-white/10 py-3.5 pl-11 pr-4 text-white placeholder-gray-500 backdrop-blur-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
-                />
-              </div>
-              <button
-                type="submit"
-                className="shrink-0 rounded-full bg-amber-500 px-8 py-3.5 font-bold text-white shadow-lg shadow-amber-500/20 transition-all hover:bg-amber-600 hover:shadow-xl active:scale-[0.98]"
-              >
-                {ctaStatus === 'success' ? (
-                  <span className="flex items-center gap-1.5">
-                    <FiCheck size={16} /> You&apos;re in!
-                  </span>
-                ) : ctaStatus === 'duplicate' ? (
-                  'Already signed up!'
-                ) : (
-                  <span className="flex items-center gap-1.5">
-                    Get Started <FiArrowRight size={16} />
-                  </span>
-                )}
-              </button>
-            </form>
-
-            <p className="relative mt-5 text-sm text-gray-500">
-              Available on Web. Mobile app coming soon.
-            </p>
+          </div>
+          <div className="space-y-4">
+            {[
+              { q: 'Is Mahber free to use?', a: 'Yes! Joining the waitlist and core features are completely free. Premium features like promoted listings may have optional fees in the future.' },
+              { q: 'Who is Mahber for?', a: 'Mahber is built for the Ethiopian, Eritrean, and Somali diaspora worldwide. Whether you are in the US, Canada, Europe, or the Middle East, this platform is for you.' },
+              { q: 'How is Mahber different from Facebook groups?', a: 'Unlike scattered Facebook groups, Mahber is an all-in-one platform with 10 dedicated tools: jobs, housing, marketplace, remittance, dating, events, videos, translation, immigration resources, and community forums.' },
+              { q: 'How does the remittance feature work?', a: 'Mahber offers money transfers to Ethiopia, Eritrea, and Somalia with a flat 1% fee and live exchange rates. Much cheaper than traditional services that charge $15-30 per transfer.' },
+              { q: 'Is my data safe?', a: 'Absolutely. We use industry-standard encryption and never sell your data. Your privacy and security are our top priority.' },
+              { q: 'When will the app launch?', a: 'We are currently in beta! Join the waitlist to get early access and be among the first to experience the full platform.' },
+            ].map((faq, i) => (
+              <details key={i} className="group rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-dark-800 p-4">
+                <summary className="flex cursor-pointer items-center justify-between font-semibold text-gray-900 dark:text-white">
+                  {faq.q}
+                  <FiChevronRight className="transition-transform group-open:rotate-90" />
+                </summary>
+                <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -864,11 +876,10 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:flex-row">
-            <p className="text-xs text-gray-400">
-              &copy; {new Date().getFullYear()} HabeshaHub. All rights reserved.
-            </p>
-            <div className="flex items-center gap-2">
+          <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-gray-200 pt-6 dark:border-dark-700 sm:flex-row">
+            <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} Mahber. All rights reserved.</p>
+            <div className="flex items-center gap-1.5">
+              {/* Ethiopian tricolor micro-bar */}
               <span className="h-2 w-2 rounded-full bg-habesha-green" />
               <span className="h-2 w-2 rounded-full bg-habesha-yellow" />
               <span className="h-2 w-2 rounded-full bg-habesha-red" />

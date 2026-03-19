@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -17,7 +17,7 @@ function ensureDataDir() {
 
 const MOCK_POSTS = [
   { id: '1', author: 'Meron T.', title: 'Best Ethiopian restaurant in Seattle?', body: 'Just moved to Seattle from DC. Where should I eat? I miss Zenebech but need a new spot.', category: 'Food', upvotes: 24, comments: 12, time: '2h ago' },
-  { id: '2', author: 'Dawit K.', title: 'Anyone else sending money through HabeshaHub?', body: 'The 1% fee is life changing compared to what I was paying before. My family in Addis got the money same day.', category: 'Finance', upvotes: 45, comments: 8, time: '4h ago' },
+  { id: '2', author: 'Dawit K.', title: 'Anyone else sending money through Mahber?', body: 'The 1% fee is life changing compared to what I was paying before. My family in Addis got the money same day.', category: 'Finance', upvotes: 45, comments: 8, time: '4h ago' },
   { id: '3', author: 'Sara A.', title: 'Looking for Tigrinya tutor for my kids', body: 'My kids (8 and 10) are losing their Tigrinya. Anyone offer lessons in the Atlanta area? Will pay well.', category: 'Education', upvotes: 18, comments: 15, time: '6h ago' },
   { id: '4', author: 'Yonas M.', title: 'Habesha developers — lets connect!', body: 'Starting a monthly meetup for Habesha software engineers in the DMV. Who is interested?', category: 'Tech', upvotes: 67, comments: 31, time: '8h ago' },
   { id: '5', author: 'Helen B.', title: 'Advice for first-gen college students?', body: 'I am the first in my family going to university. Any advice from those who went through it?', category: 'Education', upvotes: 89, comments: 42, time: '12h ago' },

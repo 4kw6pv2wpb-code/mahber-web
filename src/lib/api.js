@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_API_URL ||
-  'https://habeshahub-backend-production.up.railway.app/api';
+  'https://mahber-backend-production.up.railway.app/api';
 
 // ---------------------------------------------------------------------------
 // Token helpers (client-side only)
@@ -18,32 +18,32 @@ const isBrowser = typeof window !== 'undefined';
 
 export function getToken() {
   if (!isBrowser) return null;
-  return localStorage.getItem('habeshahub_token');
+  return localStorage.getItem('mahber_token');
 }
 
 export function setToken(token) {
   if (!isBrowser) return;
-  localStorage.setItem('habeshahub_token', token);
+  localStorage.setItem('mahber_token', token);
 }
 
 export function removeToken() {
   if (!isBrowser) return;
-  localStorage.removeItem('habeshahub_token');
+  localStorage.removeItem('mahber_token');
 }
 
 export function getRefreshToken() {
   if (!isBrowser) return null;
-  return localStorage.getItem('habeshahub_refresh_token');
+  return localStorage.getItem('mahber_refresh_token');
 }
 
 export function setRefreshToken(token) {
   if (!isBrowser) return;
-  localStorage.setItem('habeshahub_refresh_token', token);
+  localStorage.setItem('mahber_refresh_token', token);
 }
 
 export function removeRefreshToken() {
   if (!isBrowser) return;
-  localStorage.removeItem('habeshahub_refresh_token');
+  localStorage.removeItem('mahber_refresh_token');
 }
 
 // ---------------------------------------------------------------------------
@@ -76,7 +76,7 @@ api.interceptors.response.use(
       removeToken();
       removeRefreshToken();
       if (isBrowser) {
-        localStorage.removeItem('habeshahub_user');
+        localStorage.removeItem('mahber_user');
       }
     }
     return Promise.reject(error);

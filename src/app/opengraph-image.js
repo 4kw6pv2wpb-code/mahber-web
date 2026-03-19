@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -7,7 +7,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'HabeshaHub — The Diaspora Super App';
+export const alt = 'Mahber — The Diaspora Super App';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -66,11 +66,10 @@ export default async function Image() {
                 color: 'white',
               }}
             >
-              H
+              M
             </div>
-            <div style={{ display: 'flex', fontSize: 48, fontWeight: 800, color: 'white' }}>
-              Habesha
-              <span style={{ color: '#D4A017' }}>Hub</span>
+            <div style={{ display: 'flex', fontSize: 48, fontWeight: 800, color: '#D4A017' }}>
+              Mahber
             </div>
           </div>
 
@@ -158,7 +157,7 @@ export default async function Image() {
             fontWeight: 500,
           }}
         >
-          habeshahub.com
+          mahber.com
         </div>
       </div>
     ),

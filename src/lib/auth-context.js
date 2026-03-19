@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -12,7 +12,7 @@ import { authApi, setToken, removeToken, getToken, setRefreshToken, removeRefres
 
 const AuthContext = createContext(null);
 
-const USER_STORAGE_KEY = 'habeshahub_user';
+const USER_STORAGE_KEY = 'mahber_user';
 
 function getStoredUser() {
   if (typeof window === 'undefined') return null;

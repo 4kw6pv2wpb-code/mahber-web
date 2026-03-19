@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -153,7 +153,7 @@ export default function SearchPage() {
         {!query && (
           <div className="text-center py-12">
             <FiSearch className="mx-auto text-gray-700 mb-3" size={48} />
-            <p className="text-gray-500">Search across all of HabeshaHub</p>
+            <p className="text-gray-500">Search across all of Mahber</p>
             <p className="text-gray-600 text-sm mt-1">Jobs, events, community posts, marketplace, and more</p>
           </div>
         )}

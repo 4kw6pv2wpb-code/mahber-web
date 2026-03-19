@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -50,7 +50,7 @@ export default function InvestorsPage() {
 
       <div className="max-w-5xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
 
         {/* Hero */}
@@ -64,7 +64,7 @@ export default function InvestorsPage() {
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
             2M+ diaspora in the US. $6B+ in annual remittance. Zero purpose-built platforms.
-            HabeshaHub is building the digital infrastructure for Africa&apos;s largest underserved diaspora.
+            Mahber is building the digital infrastructure for Africa&apos;s largest underserved diaspora.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export default function InvestorsPage() {
             </ul>
           </div>
           <div className="bg-green-500/5 border border-green-500/20 rounded-2xl p-8">
-            <h2 className="text-xl font-bold mb-4 text-green-400">HabeshaHub Solution</h2>
+            <h2 className="text-xl font-bold mb-4 text-green-400">Mahber Solution</h2>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>• All-in-one super app: jobs, housing, events, marketplace, dating, remittance</li>
               <li>• Community trust scores and verified listings</li>
@@ -168,7 +168,7 @@ export default function InvestorsPage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
-              href="https://calendly.com/habeshahub"
+              href="https://calendly.com/mahber"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded-xl transition-colors flex items-center gap-2"
@@ -176,10 +176,10 @@ export default function InvestorsPage() {
               <FiCalendar /> Schedule a Call
             </a>
             <a
-              href="mailto:investors@habeshahub.com"
+              href="mailto:investors@mahber.com"
               className="px-8 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-xl transition-colors flex items-center gap-2"
             >
-              <FiMail /> investors@habeshahub.com
+              <FiMail /> investors@mahber.com
             </a>
           </div>
         </div>

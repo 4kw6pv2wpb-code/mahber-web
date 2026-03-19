@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -43,7 +43,7 @@ export default function DownloadPage() {
           Get the App
         </h1>
         <p className="text-lg text-gray-400 mb-12 max-w-xl mx-auto">
-          HabeshaHub is launching on mobile soon. Be the first to download when we go live.
+          Mahber is launching on mobile soon. Be the first to download when we go live.
         </p>
 
         {/* Phone mockup */}
@@ -128,13 +128,13 @@ export default function DownloadPage() {
               <rect x="75" y="75" width="15" height="15" rx="2" fill="#D4A017" />
             </svg>
           </div>
-          <p className="text-sm text-gray-400">Scan to visit HabeshaHub</p>
+          <p className="text-sm text-gray-400">Scan to visit Mahber</p>
         </div>
 
         <p className="text-gray-500 text-sm">
           Web app available now at{' '}
           <a href="/" className="text-amber-400 hover:underline">
-            habeshahub.com
+            mahber.com
           </a>
         </p>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -33,8 +33,8 @@ export default function TranslationPage() {
   useAnalytics();
   const [fromLang, setFromLang] = useState('en');
   const [toLang, setToLang] = useState('am');
-  const [sourceText, setSourceText] = useState('Welcome to HabeshaHub');
-  const [resultText, setResultText] = useState('እንኳን ደህና መጡ ወደ HabeshaHub');
+  const [sourceText, setSourceText] = useState('Welcome to Mahber');
+  const [resultText, setResultText] = useState('እንኳን ደህና መጡ ወደ Mahber');
   const [loading, setLoading] = useState(false);
 
   const swap = () => {

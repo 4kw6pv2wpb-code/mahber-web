@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -86,7 +86,7 @@ export default function PricingPage() {
 
       <div className="max-w-5xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
 
         <div className="text-center mb-16">

@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -32,13 +32,13 @@ export default function BlogPost() {
           <span className="text-gray-500 text-xs flex items-center gap-1"><FiClock size={12} /> 6 min read</span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Why We Built HabeshaHub</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">Why We Built Mahber</h1>
 
         <div className="flex items-center gap-3 mb-10 pb-10 border-b border-gray-800">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-sm font-bold">ET</div>
           <div>
             <div className="font-medium text-sm">Eyob Tesfayohanes</div>
-            <div className="text-gray-500 text-xs">Founder, HabeshaHub</div>
+            <div className="text-gray-500 text-xs">Founder, Mahber</div>
           </div>
         </div>
 
@@ -87,9 +87,9 @@ export default function BlogPost() {
             word of mouth.
           </p>
 
-          <h2 className="text-2xl font-bold text-white mt-10 mb-4">What HabeshaHub Actually Is</h2>
+          <h2 className="text-2xl font-bold text-white mt-10 mb-4">What Mahber Actually Is</h2>
           <p>
-            HabeshaHub is not another social network. It is not another listing site. It is a super app —
+            Mahber is not another social network. It is not another listing site. It is a super app —
             a single platform that consolidates every digital need of the Habesha diaspora into one
             beautifully designed, culturally intelligent experience.
           </p>
@@ -118,7 +118,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">Join Us</h2>
           <p>
-            HabeshaHub is launching soon. If you believe the Habesha diaspora deserves better digital
+            Mahber is launching soon. If you believe the Habesha diaspora deserves better digital
             infrastructure — if you are tired of Facebook groups and WhatsApp chains — join the waitlist.
             Be part of building something that has been needed for decades.
           </p>

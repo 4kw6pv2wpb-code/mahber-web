@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -11,7 +11,7 @@ import crypto from 'crypto';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
-const JWT_SECRET = process.env.JWT_SECRET || 'habeshahub-secret-2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'mahber-secret-2026';
 
 function readUsers() {
   try { return JSON.parse(fs.readFileSync(USERS_FILE, 'utf-8')); } catch { return []; }
@@ -32,7 +32,7 @@ function verifyToken(token) {
 
 export async function PUT(request) {
   try {
-    const token = request.cookies.get('hh_token')?.value;
+    const token = request.cookies.get('mahber_token')?.value;
     if (!token) return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
     const payload = verifyToken(token);
     if (!payload) return NextResponse.json({ error: 'Invalid token' }, { status: 401 });

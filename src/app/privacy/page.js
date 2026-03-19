@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
       </div>
       <div className="max-w-3xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
         <h1 className="text-4xl font-bold mb-2">Privacy Policy</h1>
         <p className="text-gray-500 mb-10">Last updated: March 15, 2026</p>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
         <div className="prose prose-invert prose-sm max-w-none space-y-8 text-gray-400 leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-white">1. Introduction</h2>
-            <p>HabeshaHub, Inc. (&ldquo;HabeshaHub,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting the privacy of our users. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you use our website, mobile application, and related services (collectively, the &ldquo;Platform&rdquo;).</p>
+            <p>Mahber, Inc. (&ldquo;Mahber,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting the privacy of our users. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you use our website, mobile application, and related services (collectively, the &ldquo;Platform&rdquo;).</p>
             <p>By accessing or using the Platform, you agree to the collection and use of information in accordance with this policy. If you do not agree, please discontinue use of the Platform.</p>
           </section>
 
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
               <li><strong className="text-gray-200">Opt-out:</strong> Opt out of marketing communications at any time</li>
               <li><strong className="text-gray-200">Restrict processing:</strong> Request limitation of how we use your data</li>
             </ul>
-            <p>To exercise these rights, contact us at privacy@habeshahub.com or through your account Settings.</p>
+            <p>To exercise these rights, contact us at privacy@mahber.com or through your account Settings.</p>
           </section>
 
           <section>
@@ -131,7 +131,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-white">12. Contact Us</h2>
             <p>If you have questions or concerns about this Privacy Policy, contact us at:</p>
-            <p>HabeshaHub, Inc.<br />Seattle, Washington<br />Email: privacy@habeshahub.com</p>
+            <p>Mahber, Inc.<br />Seattle, Washington<br />Email: privacy@mahber.com</p>
           </section>
         </div>
       </div>

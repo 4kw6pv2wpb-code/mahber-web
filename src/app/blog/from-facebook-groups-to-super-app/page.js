@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -33,7 +33,7 @@ export default function BlogPost() {
         <h1 className="text-3xl md:text-4xl font-bold mb-6">From Facebook Groups to Super App: Our Vision</h1>
         <div className="flex items-center gap-3 mb-10 pb-10 border-b border-gray-800">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-sm font-bold">ET</div>
-          <div><div className="font-medium text-sm">Eyob Tesfayohanes</div><div className="text-gray-500 text-xs">Founder, HabeshaHub</div></div>
+          <div><div className="font-medium text-sm">Eyob Tesfayohanes</div><div className="text-gray-500 text-xs">Founder, Mahber</div></div>
         </div>
         <div className="prose prose-invert prose-lg max-w-none space-y-6 text-gray-300 leading-relaxed">
           <p className="text-xl text-gray-200 font-medium">
@@ -65,31 +65,31 @@ export default function BlogPost() {
             operating system for their users&apos; daily lives.
           </p>
           <p>
-            HabeshaHub follows this model but adapted for diaspora life. We are not trying to replace
+            Mahber follows this model but adapted for diaspora life. We are not trying to replace
             WhatsApp or Instagram. We are consolidating the <em>community-specific</em> functions that
             are currently scattered across a dozen platforms:
           </p>
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
             <div className="grid grid-cols-2 gap-4 text-sm">
-              <div><span className="text-gray-500">Finding a job:</span> <span className="line-through text-gray-600">Facebook group</span> → <span className="text-amber-400">HabeshaHub Jobs</span></div>
-              <div><span className="text-gray-500">Finding housing:</span> <span className="line-through text-gray-600">Craigslist + FB</span> → <span className="text-amber-400">HabeshaHub Housing</span></div>
-              <div><span className="text-gray-500">Sending money:</span> <span className="line-through text-gray-600">WU/hawala</span> → <span className="text-amber-400">HabeshaHub Remit</span></div>
-              <div><span className="text-gray-500">Finding events:</span> <span className="line-through text-gray-600">Flyers on WhatsApp</span> → <span className="text-amber-400">HabeshaHub Events</span></div>
+              <div><span className="text-gray-500">Finding a job:</span> <span className="line-through text-gray-600">Facebook group</span> → <span className="text-amber-400">Mahber Jobs</span></div>
+              <div><span className="text-gray-500">Finding housing:</span> <span className="line-through text-gray-600">Craigslist + FB</span> → <span className="text-amber-400">Mahber Housing</span></div>
+              <div><span className="text-gray-500">Sending money:</span> <span className="line-through text-gray-600">WU/hawala</span> → <span className="text-amber-400">Mahber Remit</span></div>
+              <div><span className="text-gray-500">Finding events:</span> <span className="line-through text-gray-600">Flyers on WhatsApp</span> → <span className="text-amber-400">Mahber Events</span></div>
               <div><span className="text-gray-500">Dating:</span> <span className="line-through text-gray-600">Tinder/random</span> → <span className="text-amber-400">HabeshaMatch</span></div>
-              <div><span className="text-gray-500">Buying/selling:</span> <span className="line-through text-gray-600">FB Marketplace</span> → <span className="text-amber-400">HabeshaHub Market</span></div>
+              <div><span className="text-gray-500">Buying/selling:</span> <span className="line-through text-gray-600">FB Marketplace</span> → <span className="text-amber-400">Mahber Market</span></div>
             </div>
           </div>
 
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">The Network Effect Advantage</h2>
           <p>
             Here is what makes this exciting from a product perspective: every feature strengthens
-            every other feature. The person who finds a job through HabeshaHub also needs housing in
+            every other feature. The person who finds a job through Mahber also needs housing in
             their new city. The person who lists an apartment also sells traditional clothing on the
             marketplace. The person who attends events also sends money home.
           </p>
           <p>
             This cross-pollination is impossible when each function lives on a separate platform.
-            On HabeshaHub, it happens naturally. One login, one profile, one trust score, one
+            On Mahber, it happens naturally. One login, one profile, one trust score, one
             community identity — across every aspect of diaspora life.
           </p>
 
@@ -103,12 +103,12 @@ export default function BlogPost() {
             Three words: <strong className="text-white">community trust density</strong>. The Habesha
             diaspora is one of the most tightly knit immigrant communities in America. We already
             operate on trust networks — edir savings groups, equb rotating credit, community
-            guarantees for housing. HabeshaHub does not create trust from scratch. It digitizes
+            guarantees for housing. Mahber does not create trust from scratch. It digitizes
             and amplifies the trust networks that already exist.
           </p>
           <p>
             When your cousin in DC vouches for a job posting, that means something. When your
-            church community verifies a housing listing, that means something. HabeshaHub makes
+            church community verifies a housing listing, that means something. Mahber makes
             these trust signals visible, searchable, and scalable.
           </p>
 

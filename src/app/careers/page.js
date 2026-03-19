@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -20,7 +20,7 @@ const ROLES = [
     icon: FiCode,
     desc: 'Build the core platform — from React frontends to Node.js APIs to database design. You will own entire features from conception to deployment. We move fast and ship daily.',
     reqs: ['3+ years with React/Next.js and Node.js', 'Experience with PostgreSQL or MongoDB', 'Comfortable with AWS or Railway/Vercel', 'Bonus: experience with fintech or payment systems', 'Bonus: Habesha community member'],
-    mailto: 'careers@habeshahub.com?subject=Full-Stack Engineer Application',
+    mailto: 'careers@mahber.com?subject=Full-Stack Engineer Application',
   },
   {
     title: 'Mobile Developer',
@@ -29,16 +29,16 @@ const ROLES = [
     icon: FiSmartphone,
     desc: 'Lead our mobile app development with React Native. Build beautiful, performant iOS and Android apps that serve millions of diaspora members. Camera, payments, real-time messaging — the full stack.',
     reqs: ['2+ years with React Native (iOS + Android)', 'Published apps on App Store and Google Play', 'Experience with real-time features (WebSocket/push)', 'Bonus: experience with Expo', 'Bonus: Amharic, Tigrinya, or Somali speaker'],
-    mailto: 'careers@habeshahub.com?subject=Mobile Developer Application',
+    mailto: 'careers@mahber.com?subject=Mobile Developer Application',
   },
   {
     title: 'Community Manager',
     type: 'Full-time',
     location: 'Seattle, WA / Remote',
     icon: FiUsers,
-    desc: 'Be the bridge between HabeshaHub and the diaspora. Manage our social presence, engage community leaders, moderate forums, and ensure every user feels heard. You ARE the community.',
+    desc: 'Be the bridge between Mahber and the diaspora. Manage our social presence, engage community leaders, moderate forums, and ensure every user feels heard. You ARE the community.',
     reqs: ['Deep connection to Ethiopian, Eritrean, or Somali diaspora', 'Experience managing online communities (5K+ members)', 'Fluent in English + at least one: Amharic, Tigrinya, Somali', 'Social media management experience', 'Based in a major Habesha community hub city'],
-    mailto: 'careers@habeshahub.com?subject=Community Manager Application',
+    mailto: 'careers@mahber.com?subject=Community Manager Application',
   },
   {
     title: 'Growth Marketing Lead',
@@ -47,7 +47,7 @@ const ROLES = [
     icon: FiTrendingUp,
     desc: 'Drive user acquisition from 0 to 100K. Build viral loops, run paid campaigns, partner with community influencers, and own every growth metric. This is a greenfield opportunity to build a marketing engine from scratch.',
     reqs: ['3+ years in growth/performance marketing', 'Experience scaling consumer products (0→100K users)', 'Proficiency with analytics tools (GA, Mixpanel, etc.)', 'Understanding of diaspora community dynamics', 'Bonus: experience with marketplace or social platforms'],
-    mailto: 'careers@habeshahub.com?subject=Growth Marketing Lead Application',
+    mailto: 'careers@mahber.com?subject=Growth Marketing Lead Application',
   },
 ];
 
@@ -64,7 +64,7 @@ export default function CareersPage() {
 
       <div className="max-w-4xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -72,7 +72,7 @@ export default function CareersPage() {
           <span className="text-amber-400">future of diaspora tech</span>
         </h1>
         <p className="text-xl text-gray-400 mb-4 max-w-2xl">
-          HabeshaHub is a small, fast-moving team on a mission to build the digital infrastructure
+          Mahber is a small, fast-moving team on a mission to build the digital infrastructure
           for 5 million+ Habesha diaspora members worldwide.
         </p>
         <p className="text-gray-500 mb-12">
@@ -141,7 +141,7 @@ export default function CareersPage() {
             We are always looking for talented people passionate about the diaspora. Send us your info.
           </p>
           <a
-            href="mailto:careers@habeshahub.com?subject=General Application"
+            href="mailto:careers@mahber.com?subject=General Application"
             className="inline-flex px-5 py-2 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg text-sm transition-colors"
           >
             Send General Application

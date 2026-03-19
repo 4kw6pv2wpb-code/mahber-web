@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -24,7 +24,7 @@ export default function TermsPage() {
       </div>
       <div className="max-w-3xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 text-sm">
-          <FiArrowLeft /> Back to HabeshaHub
+          <FiArrowLeft /> Back to Mahber
         </Link>
         <h1 className="text-4xl font-bold mb-2">Terms of Service</h1>
         <p className="text-gray-500 mb-10">Last updated: March 15, 2026</p>
@@ -32,7 +32,7 @@ export default function TermsPage() {
         <div className="prose prose-invert prose-sm max-w-none space-y-8 text-gray-400 leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-white">1. Acceptance of Terms</h2>
-            <p>By accessing or using HabeshaHub (&ldquo;the Platform&rdquo;), operated by HabeshaHub, Inc. (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you do not agree to all of these Terms, you may not access or use the Platform. These Terms constitute a legally binding agreement between you and the Company.</p>
+            <p>By accessing or using Mahber (&ldquo;the Platform&rdquo;), operated by Mahber, Inc. (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you do not agree to all of these Terms, you may not access or use the Platform. These Terms constitute a legally binding agreement between you and the Company.</p>
           </section>
 
           <section>
@@ -47,7 +47,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-white">4. Platform Services</h2>
-            <p>HabeshaHub provides the following services, subject to these Terms:</p>
+            <p>Mahber provides the following services, subject to these Terms:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li><strong className="text-gray-200">Jobs Board:</strong> Job listing and application platform for community-relevant employment</li>
               <li><strong className="text-gray-200">Housing:</strong> Rental and housing listing marketplace</li>
@@ -62,7 +62,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-white">5. User Content</h2>
-            <p>You retain ownership of content you create and post on the Platform (&ldquo;User Content&rdquo;). By posting User Content, you grant HabeshaHub a worldwide, non-exclusive, royalty-free, transferable license to use, display, reproduce, modify, and distribute your User Content in connection with operating and improving the Platform.</p>
+            <p>You retain ownership of content you create and post on the Platform (&ldquo;User Content&rdquo;). By posting User Content, you grant Mahber a worldwide, non-exclusive, royalty-free, transferable license to use, display, reproduce, modify, and distribute your User Content in connection with operating and improving the Platform.</p>
             <p>You are solely responsible for your User Content. You agree not to post content that is illegal, fraudulent, defamatory, threatening, or harassing; infringes on intellectual property rights; contains malware, spam, or deceptive information; violates any person&apos;s privacy rights; or promotes discrimination, hatred, or violence against any individual or group.</p>
           </section>
 
@@ -73,7 +73,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-white">7. Financial Services</h2>
-            <p>Remittance and payment services are subject to additional terms and conditions, applicable anti-money laundering (AML) and know-your-customer (KYC) regulations, transaction limits and verification requirements, and licensing requirements in applicable jurisdictions. HabeshaHub partners with licensed money service businesses (MSBs) to facilitate remittance transfers. Transfer availability, fees, and exchange rates are subject to change. We are not a bank and do not hold deposits.</p>
+            <p>Remittance and payment services are subject to additional terms and conditions, applicable anti-money laundering (AML) and know-your-customer (KYC) regulations, transaction limits and verification requirements, and licensing requirements in applicable jurisdictions. Mahber partners with licensed money service businesses (MSBs) to facilitate remittance transfers. Transfer availability, fees, and exchange rates are subject to change. We are not a bank and do not hold deposits.</p>
           </section>
 
           <section>
@@ -83,7 +83,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-white">9. Intellectual Property</h2>
-            <p>The Platform, including its design, code, logos, trademarks, and content (excluding User Content), is owned by HabeshaHub, Inc. and is protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the Platform without our express written consent.</p>
+            <p>The Platform, including its design, code, logos, trademarks, and content (excluding User Content), is owned by Mahber, Inc. and is protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works based on the Platform without our express written consent.</p>
           </section>
 
           <section>
@@ -93,17 +93,17 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-white">11. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, HABESHAHUB SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR USE, ARISING OUT OF OR RELATED TO YOUR USE OF THE PLATFORM. Our total liability for any claim arising from these Terms or the Platform shall not exceed the amount you paid to us in the 12 months preceding the claim, or $100, whichever is greater.</p>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, MAHBER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR USE, ARISING OUT OF OR RELATED TO YOUR USE OF THE PLATFORM. Our total liability for any claim arising from these Terms or the Platform shall not exceed the amount you paid to us in the 12 months preceding the claim, or $100, whichever is greater.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-white">12. Indemnification</h2>
-            <p>You agree to indemnify, defend, and hold harmless HabeshaHub, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys&apos; fees) arising out of or related to your use of the Platform, your User Content, your violation of these Terms, or your violation of any rights of another party.</p>
+            <p>You agree to indemnify, defend, and hold harmless Mahber, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys&apos; fees) arising out of or related to your use of the Platform, your User Content, your violation of these Terms, or your violation of any rights of another party.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-white">13. Dispute Resolution</h2>
-            <p>Any disputes arising from these Terms or the Platform shall be resolved through binding arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules. Arbitration shall take place in King County, Washington. You agree to waive any right to participate in a class action lawsuit or class-wide arbitration against HabeshaHub.</p>
+            <p>Any disputes arising from these Terms or the Platform shall be resolved through binding arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules. Arbitration shall take place in King County, Washington. You agree to waive any right to participate in a class action lawsuit or class-wide arbitration against Mahber.</p>
           </section>
 
           <section>
@@ -124,7 +124,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-white">17. Contact</h2>
             <p>For questions about these Terms, contact us at:</p>
-            <p>HabeshaHub, Inc.<br />Seattle, Washington<br />Email: legal@habeshahub.com</p>
+            <p>Mahber, Inc.<br />Seattle, Washington<br />Email: legal@mahber.com</p>
           </section>
         </div>
       </div>

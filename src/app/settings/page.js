@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -102,7 +102,7 @@ export default function SettingsPage() {
               { key: 'messages', label: 'Messages', desc: 'New direct messages' },
               { key: 'events', label: 'Event Reminders', desc: 'Upcoming events you RSVP\'d to' },
               { key: 'community', label: 'Community Replies', desc: 'Replies to your posts and comments' },
-              { key: 'marketing', label: 'Updates & News', desc: 'HabeshaHub product updates' },
+              { key: 'marketing', label: 'Updates & News', desc: 'Mahber product updates' },
             ].map((n) => (
               <div key={n.key} className="flex items-center justify-between bg-gray-900 border border-gray-800 rounded-xl p-4">
                 <div>

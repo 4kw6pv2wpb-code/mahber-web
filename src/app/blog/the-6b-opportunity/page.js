@@ -1,7 +1,7 @@
 'use client';
 
 /*
- * Copyright (c) 2026 HabeshaHub, Inc. All rights reserved.
+ * Copyright (c) 2026 Mahber, Inc. All rights reserved.
  * This source code is proprietary and confidential.
  * Unauthorized copying, modification, or distribution is strictly prohibited.
  */
@@ -33,7 +33,7 @@ export default function BlogPost() {
         <h1 className="text-3xl md:text-4xl font-bold mb-6">The $6B Opportunity: Serving the Habesha Diaspora</h1>
         <div className="flex items-center gap-3 mb-10 pb-10 border-b border-gray-800">
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-sm font-bold">ET</div>
-          <div><div className="font-medium text-sm">Eyob Tesfayohanes</div><div className="text-gray-500 text-xs">Founder, HabeshaHub</div></div>
+          <div><div className="font-medium text-sm">Eyob Tesfayohanes</div><div className="text-gray-500 text-xs">Founder, Mahber</div></div>
         </div>
         <div className="prose prose-invert prose-lg max-w-none space-y-6 text-gray-300 leading-relaxed">
           <p className="text-xl text-gray-200 font-medium">
@@ -64,7 +64,7 @@ export default function BlogPost() {
             Sustainable Development Goal of 3%.
           </p>
           <p>
-            At HabeshaHub, we are building remittance at a flat 1% fee. On $6B in annual volume, reducing
+            At Mahber, we are building remittance at a flat 1% fee. On $6B in annual volume, reducing
             fees from 8.5% to 1% would save the diaspora over <strong className="text-white">$450 million per year</strong>.
             That is money that goes back to families — to school fees, to medical bills, to small businesses.
           </p>
@@ -99,7 +99,7 @@ export default function BlogPost() {
             none of the features our community needs — no payments, no verification, no trust systems.
           </p>
           <p>
-            HabeshaHub is the first platform attempting to consolidate the entire diaspora experience
+            Mahber is the first platform attempting to consolidate the entire diaspora experience
             into one application. First mover advantage in a $8B+ market with zero established incumbents.
           </p>
 
