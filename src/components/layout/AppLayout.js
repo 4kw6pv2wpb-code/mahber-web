@@ -71,10 +71,10 @@ export default function AppLayout({ children }) {
             </button>
             <Link href="/home" className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary font-bold text-white">
-                H
+                M
               </div>
               <span className="hidden text-xl font-bold text-gray-900 dark:text-white sm:block">
-                Habesha<span className="text-primary">Hub</span>
+                Mah<span className="text-primary">ber</span>
               </span>
             </Link>
           </div>
