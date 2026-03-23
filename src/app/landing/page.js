@@ -202,7 +202,7 @@ function PhoneMockup() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500 text-[10px] font-bold text-white">
-                  H
+                  M
                 </div>
                 <span className="text-sm font-bold text-navy">
                   Mah<span className="text-amber-500">ber</span>
@@ -379,7 +379,7 @@ export default function LandingPage() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-500 font-bold text-white shadow-sm">
-              H
+              M
             </div>
             <span className="text-xl font-bold text-navy">
               Mah<span className="text-amber-500">ber</span>
@@ -787,7 +787,7 @@ export default function LandingPage() {
             <div>
               <Link href="/" className="flex items-center gap-2.5">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-sm font-bold text-white">
-                  H
+                  M
                 </div>
                 <span className="text-lg font-bold text-navy">
                   Mah<span className="text-amber-500">ber</span>

@@ -81,7 +81,7 @@ export default function AdminPage() {
         <form onSubmit={login} className="bg-gray-900 border border-gray-800 rounded-2xl p-8 w-full max-w-sm">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-white font-bold text-lg">
-              H
+              M
             </div>
             <h1 className="text-xl font-bold text-white">Admin Panel</h1>
           </div>
@@ -124,7 +124,7 @@ export default function AdminPage() {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white font-bold text-sm">
-              H
+              M
             </div>
             <span className="font-bold text-lg">Mahber Admin</span>
           </div>

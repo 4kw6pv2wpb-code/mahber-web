@@ -26,7 +26,7 @@ export default function DownloadPage() {
         {/* Logo */}
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center text-white font-bold text-3xl shadow-lg shadow-amber-500/20">
-            H
+            M
           </div>
           <span className="text-3xl font-bold">
             Mah<span className="text-amber-400">ber</span>
@@ -51,7 +51,7 @@ export default function DownloadPage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-700 rounded-b-2xl" />
           <div className="h-full flex flex-col items-center justify-center p-6">
             <div className="w-20 h-20 rounded-2xl bg-amber-500 flex items-center justify-center text-white font-bold text-4xl mb-4">
-              H
+              M
             </div>
             <div className="text-xl font-bold mb-2">
               Mah<span className="text-amber-400">ber</span>

@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-3">
               <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white font-bold text-sm">
-                H
+                M
               </div>
               <span className="font-bold text-white">
                 Mah<span className="text-amber-400">ber</span>

@@ -89,7 +89,7 @@ export default function LinksPage() {
         {/* Avatar + Bio */}
         <div className="mb-8 text-center">
           <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-amber-600 text-3xl font-bold text-white shadow-xl shadow-primary/30">
-            H
+            M
           </div>
           <h1 className="text-xl font-bold text-white">
             Mah<span className="text-primary">ber</span>
