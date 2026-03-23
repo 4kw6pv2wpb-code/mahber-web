@@ -51,7 +51,7 @@ export default function Footer() {
                 H
               </div>
               <span className="font-bold text-white">
-                Habesha<span className="text-amber-400">Hub</span>
+                Mah<span className="text-amber-400">ber</span>
               </span>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed">

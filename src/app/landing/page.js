@@ -205,7 +205,7 @@ function PhoneMockup() {
                   H
                 </div>
                 <span className="text-sm font-bold text-navy">
-                  Habesha<span className="text-amber-500">Hub</span>
+                  Mah<span className="text-amber-500">ber</span>
                 </span>
               </div>
               <div className="flex gap-2">
@@ -382,7 +382,7 @@ export default function LandingPage() {
               H
             </div>
             <span className="text-xl font-bold text-navy">
-              Habesha<span className="text-amber-500">Hub</span>
+              Mah<span className="text-amber-500">ber</span>
             </span>
           </Link>
 
@@ -790,7 +790,7 @@ export default function LandingPage() {
                   H
                 </div>
                 <span className="text-lg font-bold text-navy">
-                  Habesha<span className="text-amber-500">Hub</span>
+                  Mah<span className="text-amber-500">ber</span>
                 </span>
               </Link>
               <p className="mt-4 text-sm leading-relaxed text-gray-500">

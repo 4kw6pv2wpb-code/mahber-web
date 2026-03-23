@@ -139,8 +139,8 @@ export default function LaunchPage() {
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-16 text-center">
         {/* Logo */}
         <Link href="/" className="mb-8 flex items-center gap-2">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-lg shadow-primary/30">H</div>
-          <span className="text-2xl font-bold text-white">Habesha<span className="text-primary">Hub</span></span>
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-lg shadow-primary/30">M</div>
+          <span className="text-2xl font-bold text-white">Mah<span className="text-primary">ber</span></span>
         </Link>
 
         {/* Headline */}

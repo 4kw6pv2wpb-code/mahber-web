@@ -29,7 +29,7 @@ export default function RootPage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-white dark:bg-dark-950">
         <div className="flex flex-col items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-white">H</div>
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-xl font-bold text-white">M</div>
           <div className="h-1 w-24 overflow-hidden rounded-full bg-gray-200 dark:bg-dark-700">
             <div className="h-full w-1/2 animate-[shimmer_1s_ease-in-out_infinite] rounded-full bg-primary" />
           </div>

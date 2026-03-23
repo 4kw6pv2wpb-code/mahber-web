@@ -92,7 +92,7 @@ export default function LinksPage() {
             H
           </div>
           <h1 className="text-xl font-bold text-white">
-            Habesha<span className="text-primary">Hub</span>
+            Mah<span className="text-primary">ber</span>
           </h1>
           <p className="mt-1 text-sm text-gray-400">The Diaspora Super App</p>
           <p className="mt-2 text-xs leading-relaxed text-gray-500">

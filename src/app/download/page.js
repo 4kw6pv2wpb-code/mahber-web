@@ -29,7 +29,7 @@ export default function DownloadPage() {
             H
           </div>
           <span className="text-3xl font-bold">
-            Habesha<span className="text-amber-400">Hub</span>
+            Mah<span className="text-amber-400">ber</span>
           </span>
         </div>
 
@@ -54,7 +54,7 @@ export default function DownloadPage() {
               H
             </div>
             <div className="text-xl font-bold mb-2">
-              Habesha<span className="text-amber-400">Hub</span>
+              Mah<span className="text-amber-400">ber</span>
             </div>
             <div className="text-sm text-gray-400 mb-6">The Diaspora Super App</div>
             <div className="flex gap-2 flex-wrap justify-center">
@@ -112,7 +112,7 @@ export default function DownloadPage() {
               <rect x="35" y="18" width="8" height="8" rx="1" fill="#1a1a2e" />
               <rect x="48" y="18" width="8" height="8" rx="1" fill="#1a1a2e" />
               <rect x="35" y="35" width="30" height="30" rx="4" fill="#D4A017" />
-              <text x="50" y="55" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">H</text>
+              <text x="50" y="55" textAnchor="middle" fill="white" fontSize="14" fontWeight="bold">M</text>
               <rect x="5" y="40" width="8" height="8" rx="1" fill="#1a1a2e" />
               <rect x="18" y="40" width="8" height="8" rx="1" fill="#1a1a2e" />
               <rect x="5" y="53" width="8" height="8" rx="1" fill="#1a1a2e" />
