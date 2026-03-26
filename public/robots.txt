@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://habeshahub-web-production.up.railway.app/sitemap.xml
+
+# Mahber — The Diaspora Super App
+# https://mahber.io

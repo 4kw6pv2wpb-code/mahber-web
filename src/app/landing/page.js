@@ -641,8 +641,8 @@ export default function LandingPage() {
               Other apps serve one need. We serve your whole community.
             </p>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 pb-2">
+            <table className="w-full min-w-[600px] text-left border-collapse">
               <thead>
                 <tr className="border-b-2 border-primary">
                   <th className="py-4 px-4 text-sm font-bold text-gray-900 dark:text-white">Feature</th>
@@ -683,7 +683,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section id="community" className="bg-gray-50/50 py-20 dark:bg-dark-900/50">
+      <section id="testimonials" className="bg-gray-50/50 py-20 dark:bg-dark-900/50" ref={testimonialsRef}>
         <div className="mx-auto max-w-6xl px-4">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
@@ -694,7 +694,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="stagger-children grid gap-6 md:grid-cols-3">
+          <div className="stagger-children grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TESTIMONIALS.map((t) => (
               <div
                 key={t.name}
@@ -863,12 +863,12 @@ export default function LandingPage() {
                 <Link href="/careers" className="block transition-colors hover:text-amber-600">
                   Careers
                 </Link>
-                <a href="#" className="block transition-colors hover:text-amber-600">
+                <Link href="/privacy" className="block transition-colors hover:text-amber-600">
                   Privacy Policy
-                </a>
-                <a href="#" className="block transition-colors hover:text-amber-600">
+                </Link>
+                <Link href="/terms" className="block transition-colors hover:text-amber-600">
                   Terms of Service
-                </a>
+                </Link>
                 <Link href="/contact" className="block transition-colors hover:text-amber-600">
                   Contact
                 </Link>

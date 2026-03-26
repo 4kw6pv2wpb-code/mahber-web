@@ -169,7 +169,7 @@ export default function AppLayout({ children }) {
 
       {/* Main Content */}
       <main className="pt-16 lg:pl-64">
-        <div className="min-h-[calc(100vh-4rem)] pb-20 lg:pb-6">{children}</div>
+        <div className="min-h-[calc(100vh-4rem)] pb-24 lg:pb-6">{children}</div>
       </main>
 
       {/* Mobile Bottom Nav */}

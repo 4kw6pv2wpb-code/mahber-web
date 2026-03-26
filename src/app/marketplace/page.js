@@ -117,8 +117,8 @@ export default function MarketplacePage() {
       <div className="max-w-5xl mx-auto px-4 py-6 page-fade-in">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h1 className="text-2xl font-bold text-white">Marketplace</h1>
-            <p className="text-gray-400 text-sm">{items.length} items from the community</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Marketplace</h1>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">{items.length} items from the community</p>
           </div>
           <button className="px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded-xl text-sm flex items-center gap-2 transition-colors shadow-lg shadow-amber-500/20">
             <FiPlus size={16} /> List Item
@@ -137,8 +137,8 @@ export default function MarketplacePage() {
         </div>
 
         {/* Filters */}
-        <div className="flex gap-4 mb-6 overflow-x-auto pb-2">
-          <div className="flex gap-2 scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="mb-6 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex gap-2 min-w-max scrollbar-hide" style={{ WebkitOverflowScrolling: 'touch' }}>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}

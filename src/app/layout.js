@@ -63,20 +63,20 @@ export const metadata = {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     apple: '/apple-icon.svg',
   },
-  metadataBase: new URL('https://mahber-web-production.up.railway.app'),
+  metadataBase: new URL('https://habeshahub-web-production.up.railway.app'),
   openGraph: {
     title: 'Mahber — The Diaspora Super App',
     description:
       'Connect with the Ethiopian, Eritrean, and Somali diaspora. Jobs, housing, events, marketplace, dating, immigration help, and more.',
     siteName: 'Mahber',
-    url: 'https://mahber-web-production.up.railway.app',
+    url: 'https://habeshahub-web-production.up.railway.app',
     type: 'website',
     locale: 'en_US',
     images: [
       {
-        url: 'https://habeshahub-web-production.up.railway.app/og-image.png',
-        width: 1200,
-        height: 630,
+        url: '/og-image.png',
+        width: 1536,
+        height: 1024,
         alt: 'Mahber — The Diaspora Super App',
       },
     ],

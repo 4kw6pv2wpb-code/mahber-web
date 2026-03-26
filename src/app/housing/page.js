@@ -122,8 +122,8 @@ export default function HousingPage() {
       <div className="max-w-6xl mx-auto px-4 py-6 page-fade-in">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
           <div>
-            <h1 className="text-2xl font-bold text-white">Housing</h1>
-            <p className="text-gray-400 text-sm mt-0.5">{listings.length} listings from the community</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Housing</h1>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">{listings.length} listings from the community</p>
           </div>
           <button className="px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-black font-bold rounded-xl text-sm flex items-center gap-2 transition-colors shadow-lg shadow-amber-500/20">
             <FiPlus size={16} /> Post Listing
@@ -201,7 +201,7 @@ export default function HousingPage() {
 
                   {/* Card details */}
                   <div className="p-4">
-                    <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors line-clamp-1">{listing.title}</h3>
+                    <h3 className="font-semibold text-white group-hover:text-amber-400 transition-colors line-clamp-2">{listing.title}</h3>
                     <p className="flex items-center gap-1 text-sm text-gray-400 mt-1">
                       <FiMapPin size={12} /> {listing.city || listing.location}
                     </p>

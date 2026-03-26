@@ -2,98 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/home</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/jobs</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/housing</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/events</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/marketplace</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/community</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/dating</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/remittance</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/videos</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/immigration</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/translation</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/about</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://habeshahub-web-production.up.railway.app/contact</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://habeshahub-web-production.up.railway.app/login</loc>
-    <lastmod>2026-03-18</lastmod>
+    <loc>https://habeshahub-web-production.up.railway.app/privacy</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://habeshahub-web-production.up.railway.app/register</loc>
-    <lastmod>2026-03-18</lastmod>
+    <loc>https://habeshahub-web-production.up.railway.app/terms</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
 </urlset>
