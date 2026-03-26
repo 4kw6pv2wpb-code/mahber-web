@@ -45,7 +45,7 @@ export default function PrivacyPage() {
               <li>Content you create: job listings, housing posts, marketplace items, community posts, messages</li>
               <li>Financial information: payment details for subscriptions and remittance services (processed by third-party payment processors)</li>
               <li>Communications: messages you send through the Platform, support inquiries, feedback</li>
-              <li>Dating profile: preferences, interests, and information you share on HabeshaMatch</li>
+              <li>Dating profile: preferences, interests, and information you share on MahberMatch</li>
             </ul>
             <h3 className="text-lg font-semibold text-gray-200 mt-4">2.2 Automatically Collected Information</h3>
             <ul className="list-disc pl-6 space-y-1">

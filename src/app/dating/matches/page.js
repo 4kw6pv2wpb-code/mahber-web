@@ -101,7 +101,7 @@ export default function MatchesPage() {
             className="mb-3 inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
           >
             <FiArrowLeft size={16} />
-            Back to HabeshaMatch
+            Back to MahberMatch
           </Link>
           <div className="flex items-center justify-between">
             <div>

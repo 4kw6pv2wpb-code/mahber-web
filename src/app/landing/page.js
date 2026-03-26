@@ -136,7 +136,7 @@ const TESTIMONIALS = [
   { name: 'Selam T.', location: 'Seattle, WA', heritage: 'Ethiopian', quote: 'I found my apartment, my first tech job, and my best friends here. Mahber is the community center the diaspora has always needed.', stars: 5 },
   { name: 'Berhane K.', location: 'Washington, DC', heritage: 'Eritrean', quote: 'Sending money home used to cost me $30+ in fees. With Mahber it\u2019s a flat 1\u0025. My family in Asmara gets more, and I spend less.', stars: 5 },
   { name: 'Fatima H.', location: 'Minneapolis, MN', heritage: 'Somali', quote: 'The immigration resources section literally changed my life. I found a lawyer who spoke my language and understood my case.', stars: 5 },
-  { name: 'Dawit M.', location: 'Los Angeles, CA', heritage: 'Ethiopian', quote: 'I met my fianc\u00e9e on HabeshaMatch. We bonded over our shared Habesha values. This app gets us.', stars: 5 },
+  { name: 'Dawit M.', location: 'Los Angeles, CA', heritage: 'Ethiopian', quote: 'I met my fianc\u00e9e on MahberMatch. We bonded over our shared Habesha values. This app gets us.', stars: 5 },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -658,7 +658,7 @@ export default function LandingPage() {
                   ['Housing & Rooms', true, true, true, false],
                   ['Marketplace', true, true, true, false],
                   ['Remittance (1% fee)', true, false, false, false],
-                  ['Dating (HabeshaMatch)', true, false, false, true],
+                  ['Dating (MahberMatch)', true, false, false, true],
                   ['Events & Community', true, false, true, false],
                   ['Video Feed', true, false, false, false],
                   ['Translation (6 languages)', true, false, false, false],
@@ -839,7 +839,7 @@ export default function LandingPage() {
                   Forums
                 </Link>
                 <Link href="/dating" className="block transition-colors hover:text-amber-600">
-                  HabeshaMatch
+                  MahberMatch
                 </Link>
                 <Link href="/videos" className="block transition-colors hover:text-amber-600">
                   Videos

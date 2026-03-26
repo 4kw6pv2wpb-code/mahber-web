@@ -75,7 +75,7 @@ export default function BlogPost() {
               <div><span className="text-gray-500">Finding housing:</span> <span className="line-through text-gray-600">Craigslist + FB</span> → <span className="text-amber-400">Mahber Housing</span></div>
               <div><span className="text-gray-500">Sending money:</span> <span className="line-through text-gray-600">WU/hawala</span> → <span className="text-amber-400">Mahber Remit</span></div>
               <div><span className="text-gray-500">Finding events:</span> <span className="line-through text-gray-600">Flyers on WhatsApp</span> → <span className="text-amber-400">Mahber Events</span></div>
-              <div><span className="text-gray-500">Dating:</span> <span className="line-through text-gray-600">Tinder/random</span> → <span className="text-amber-400">HabeshaMatch</span></div>
+              <div><span className="text-gray-500">Dating:</span> <span className="line-through text-gray-600">Tinder/random</span> → <span className="text-amber-400">MahberMatch</span></div>
               <div><span className="text-gray-500">Buying/selling:</span> <span className="line-through text-gray-600">FB Marketplace</span> → <span className="text-amber-400">Mahber Market</span></div>
             </div>
           </div>

@@ -38,7 +38,7 @@ are owned exclusively by Mahber, Inc.
 - Housing marketplace for diaspora rental listings
 - Events discovery and RSVP system
 - Peer-to-peer marketplace for goods and services
-- Dating/matching service (HabeshaMatch)
+- Dating/matching service (MahberMatch)
 - Remittance/money transfer integration
 - Immigration resources hub
 - Real-time messaging system

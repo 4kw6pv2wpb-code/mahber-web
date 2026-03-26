@@ -1,6 +1,6 @@
 # Mahber Web
 
-[![CI](https://github.com/4kw6pv2wpb-code/habeshahub-web/actions/workflows/ci.yml/badge.svg)](https://github.com/4kw6pv2wpb-code/habeshahub-web/actions/workflows/ci.yml)
+[![CI](https://github.com/4kw6pv2wpb-code/mahber-web/actions/workflows/ci.yml/badge.svg)](https://github.com/4kw6pv2wpb-code/mahber-web/actions/workflows/ci.yml)
 [![Deploy](https://img.shields.io/badge/deploy-Railway-blueviolet)](https://habeshahub-web-production.up.railway.app)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38bdf8)](https://tailwindcss.com)
@@ -19,7 +19,7 @@
 | Events | Cultural events, meetups, celebrations |
 | Community | Discussion forums and Q&A |
 | Marketplace | Buy and sell within the community |
-| Dating | HabeshaMatch - find your other half |
+| Dating | MahberMatch - find your other half |
 | Immigration | AI-powered immigration guidance |
 | Translation | English, Amharic, Tigrinya, Oromo, Somali, Arabic |
 | Remittance | Send money home |
@@ -40,8 +40,8 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/4kw6pv2wpb-code/habeshahub-web.git
-cd habeshahub-web
+git clone https://github.com/4kw6pv2wpb-code/mahber-web.git
+cd mahber-web
 
 # Setup environment
 cp .env.example .env.local
@@ -58,7 +58,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ```
 src/app/
   community/    # Forums & Q&A
-  dating/       # HabeshaMatch
+  dating/       # MahberMatch
   events/       # Event listings
   home/         # Main feed
   housing/      # Housing listings
@@ -101,8 +101,8 @@ npm start
 
 ## Related Repos
 
-- [mahber-backend](https://github.com/4kw6pv2wpb-code/habeshahub-backend) - API server
-- [mahber-mobile](https://github.com/4kw6pv2wpb-code/habeshahub-mobile) - React Native app
+- [mahber-backend](https://github.com/4kw6pv2wpb-code/mahber-backend) - API server
+- [mahber-mobile](https://github.com/4kw6pv2wpb-code/mahber-mobile) - React Native app
 
 ## License
 

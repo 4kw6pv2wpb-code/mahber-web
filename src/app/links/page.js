@@ -31,7 +31,7 @@ import { useAnalytics } from '@/lib/useAnalytics';
 const LINKS = [
   { icon: FiBriefcase, label: 'Jobs Board', desc: 'Find Habesha community opportunities', href: '/jobs', color: 'from-primary to-amber-600' },
   { icon: FiMapPin, label: 'Housing', desc: 'Apartments & rooms from community members', href: '/housing', color: 'from-eritrean-blue to-blue-600' },
-  { icon: FiHeart, label: 'HabeshaMatch Dating', desc: 'Meet someone who gets your culture', href: '/dating', color: 'from-accent to-pink-600' },
+  { icon: FiHeart, label: 'MahberMatch Dating', desc: 'Meet someone who gets your culture', href: '/dating', color: 'from-accent to-pink-600' },
   { icon: FiShoppingBag, label: 'Marketplace', desc: 'Buy & sell within the community', href: '/marketplace', color: 'from-habesha-green to-emerald-600' },
   { icon: FiDollarSign, label: 'Send Money Home', desc: '1% flat fee — fast & transparent', href: '/remittance', color: 'from-primary to-amber-600' },
   { icon: FiCalendar, label: 'Events', desc: 'Cultural celebrations & networking', href: '/events', color: 'from-habesha-red to-red-600' },

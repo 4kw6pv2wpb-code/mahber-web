@@ -53,7 +53,7 @@ export default function TermsPage() {
               <li><strong className="text-gray-200">Housing:</strong> Rental and housing listing marketplace</li>
               <li><strong className="text-gray-200">Events:</strong> Event discovery, listing, and ticketing</li>
               <li><strong className="text-gray-200">Marketplace:</strong> Peer-to-peer buying and selling of goods</li>
-              <li><strong className="text-gray-200">Dating (HabeshaMatch):</strong> Social matching and dating service</li>
+              <li><strong className="text-gray-200">Dating (MahberMatch):</strong> Social matching and dating service</li>
               <li><strong className="text-gray-200">Remittance:</strong> International money transfer services (subject to additional terms and regulatory requirements)</li>
               <li><strong className="text-gray-200">Community:</strong> Discussion forums and social features</li>
               <li><strong className="text-gray-200">Immigration Resources:</strong> Informational resources (not legal advice)</li>
